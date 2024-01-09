@@ -26,11 +26,20 @@ footer{
     background-image: linear-gradient(45deg, rgba(22,117,242,0.6852941860337884) 0%, rgba(133,191,242,0.7581233176864496) 40%, rgba(161,166,23,0.6572829815519958) 100%);
 }
 
+
+.logos{
+    position: fixed;
+    bottom: 15px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
 #git{
     display: none;
     position: fixed;
     bottom: 50px;
-    right: 15px;
+    right: 60px;
 }
 
 #linkedin{
