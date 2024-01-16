@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(pics/backpage.jpg);
+    background-image: url(pics/backpageAcceuil.jpg);
     height: 1000px;
 }
 

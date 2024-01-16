@@ -1,0 +1,22 @@
+body{
+}
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.square-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 5%;
+}
+.square {
+    width: 25%;
+    height: 500px;
+    background-color: black;
+    margin: 10px;
+}
