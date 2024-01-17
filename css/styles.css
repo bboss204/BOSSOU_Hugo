@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(pics/backpageAcceuil.jpg);
+    background-image: url(/pics/backpageAcceuil.jpg);
     height: 1000px;
 }
 
@@ -52,7 +52,7 @@ footer{
     width: 500px;
     clip-path: circle(200px);
     shape-outside: circle(50%);
-    background-image: url(pics/pic_profile.jpg);
+    background-image: url(/pics/pic_profile.jpg);
     margin-top: 4%;
     margin-left: 1%;
     background-repeat: no-repeat;

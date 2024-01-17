@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,23 +7,157 @@
     <title>BOSSOU hugo - Page d'Accueil</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" type="image/png" href="icons/montain.png"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+        body{
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/pics/backpageAcceuil.jpg);
+    height: 1000px;
+}
+
+header{
+    background-color: #000d06;
+}
+
+footer{
+    background-color: #000d05;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.text_droite{
+    text-align: center;
+    padding: 20px;
+    padding: auto;
+    border-radius: 100%;
+    margin-top: 5% ;
+    background-image: linear-gradient(45deg, rgba(22,117,242,0.6852941860337884) 0%, rgba(133,191,242,0.7581233176864496) 40%, rgba(161,166,23,0.6572829815519958) 100%);
+}
+
+.logos{
+    position: fixed;
+    bottom: 15px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#git{
+    position: fixed;
+    bottom: 50px;
+    right: 60px;
+}
+
+#linkedin{
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+}
+
+#profil{
+    height: 500px;
+    width: 500px;
+    clip-path: circle(200px);
+    shape-outside: circle(50%);
+    background-image: url(/pics/pic_profile.jpg);
+    margin-top: 4%;
+    margin-left: 1%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0.5ch;
+}
+
+#contenaire{
+    display: flex;
+    flex-wrap: nowrap;
+}
+        body {
+            display: flex;
+            flex-direction: column;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(/pics/backpageAcceuil.jpg);
+            height: 1000px;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        header {
+            background-color: #000d06;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin: 0;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .container-fluid {
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+        .display-6 {
+            text-align: center;
+            margin: 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #contenaire {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        #profil {
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            background-image: url(/pics/pic_profile.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin-top: 4%;
+            margin-left: 1%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 class="text-center text-light">BOSSOU hugo</h1>
-            <div class="btn-group">
-                <a class="btn text-light" href="/portofolio.html">Portfolio</a>
-                <a class="btn text-light" href="#cv">Parcours</a>
-                <a class="btn text-light" href="#skills">Passions</a>
-                <a class="btn text-light" href="#projet">projets</a>
-            </div>
+        <h1>BOSSOU hugo</h1>
+        <div class="btn-group">
+            <a class="btn" href="/portofolio.html">Portfolio</a>
+            <a class="btn" href="#cv">Parcours</a>
+            <a class="btn" href="#skills">Passions</a>
+            <a class="btn" href="#projet">projets</a>
+        </div>
     </header>
-    <div class="container-fluid bg-secondary">
-    <h1 class="display-6 text-center">Bienvenue </h1>
-    <p class="text-center">Vous etes sur l'acceuil de mon site web personnel </p>
+    <div class="container-fluid">
+        <h1 class="display-6">Bienvenue</h1>
+        <p class="text-center">Vous êtes sur l'accueil de mon site web personnel</p>
     </div>
     <div id="contenaire">
         <div>
