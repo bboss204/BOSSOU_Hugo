@@ -11,13 +11,28 @@
         <style>
             body{
                 background-color: #000d05;
-                filter: invert(1);
+                color: white;
             }
             h1 {
                 text-align: center;
                 margin-top: 5%;
                 margin-bottom: 5%;
                 color: black;
+            }
+            h3 {
+                text-align: center;
+                margin-top: 5%;
+                margin-bottom: 5%;
+                color: black;
+            }
+            #square1 {
+                text-align: center;
+            }
+            #square2 {
+                text-align: center;
+            }
+            #square3 {
+                text-align: center;
             }
             .square-container {
                 display: flex;
@@ -31,8 +46,10 @@
             .square {
                 width: 25%;
                 height: 500px;
-                background-color: black;
                 margin: 10px;
+                background-image: url(icons/carre_design.png);
+                background-size: cover;
+                background-position: center;
             }
 
             .nav {
@@ -54,27 +71,6 @@
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
-            }
-
-            .nav-link:hover {
-                background-color: #ffffff;
-                border-radius: 50%;
-                color: #000d05;
-            }
-
-            /* Added code */
-            .nav-link:hover ~ * {
-                background-color: white;
-                color: black;
-            }
-
-            .square:hover {
-                background-color: white;
-            }
-
-            .square:hover ~ * {
-                background-color: black;
-                color: white;
             }
         </style>
     </head>
@@ -98,13 +94,61 @@
             </ul>
         </nav>
     </header>
+    <h3>Bienvenue sur mon portfolio, <br> <i>survoler les carre pour decouvrir les trois types de projets</i></h3>
     <div class="square-container">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <div class="square" id="square1">
+            <h2>Informatique</h2>
+            <ul>
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li>Element 3</li>
+            </ul>
+        </div>
+        <div class="square" id="square2">
+            <h2>reseau</h2>
+            <ul>
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li>Element 3</li>
+            </ul>
+        </div>
+        <div class="square" id="square3">
+            <h2>communication</h2>
+            <ul>
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li>Element 3</li>
+            </ul>
+        </div>
     </div>
     <script>
-        console.log("Hello World");
+        let carre1 = document.querySelector("#square1");
+        let carre2 = document.querySelector("#square2");
+        let carre3 = document.querySelector("#square3");
+
+        carre1.addEventListener("mouseover", function(event) {
+            document.body.style.backgroundColor = "white";
+            carre1.style.backgroundImage = "url(/pics/back_informatique.jpg)";
+        });
+        carre1.addEventListener("mouseout", function(event) {
+            document.body.style.backgroundColor = "black";
+        });
+
+        carre2.addEventListener("mouseover", function(event) {
+            document.body.style.backgroundColor = "white";
+            carre2.style.backgroundImage = "url(/pics/back_reseau.jpg)";
+        });
+        carre2.addEventListener("mouseout", function(event) {
+            document.body.style.backgroundColor = "black";
+        });
+
+        carre3.addEventListener("mouseover", function(event) {
+            document.body.style.backgroundColor = "white";
+            carre3.style.backgroundImage = "url(pics/back_communication)";
+        });
+        carre3.addEventListener("mouseout", function(event) {
+            document.body.style.backgroundColor = "black";
+        });
     </script>
 </body>
 </html>
