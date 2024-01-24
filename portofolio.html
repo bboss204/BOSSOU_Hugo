@@ -9,26 +9,30 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
         <style>
+            body{
+                background-color: #000d05;
+                filter: invert(1);
+            }
             h1 {
-            text-align: center;
-            margin-top: 5%;
-            margin-bottom: 5%;
-            color: black;
+                text-align: center;
+                margin-top: 5%;
+                margin-bottom: 5%;
+                color: black;
             }
             .square-container {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; 
-            margin: 5%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; 
+                margin: 5%;
             }
             .square {
-            width: 25%;
-            height: 500px;
-            background-color: black;
-            margin: 10px;
+                width: 25%;
+                height: 500px;
+                background-color: black;
+                margin: 10px;
             }
 
             .nav {
@@ -36,14 +40,16 @@
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
+                text-align: center; /* Ajout de cette ligne */
             }
 
             .nav-item {
-                float: left;
+                display: inline-block;
+                text-align: center;
             }
 
             .nav-link {
-                display: block;
+                display: inline-block;
                 color: black;
                 text-align: center;
                 padding: 14px 16px;
@@ -56,7 +62,20 @@
                 color: #000d05;
             }
 
+            /* Added code */
+            .nav-link:hover ~ * {
+                background-color: white;
+                color: black;
+            }
 
+            .square:hover {
+                background-color: white;
+            }
+
+            .square:hover ~ * {
+                background-color: black;
+                color: white;
+            }
         </style>
     </head>
     <body>
@@ -79,10 +98,13 @@
             </ul>
         </nav>
     </header>
-    <div>
+    <div class="square-container">
         <div class="square"></div>
         <div class="square"></div>
         <div class="square"></div>
     </div>
+    <script>
+        console.log("Hello World");
+    </script>
 </body>
 </html>
