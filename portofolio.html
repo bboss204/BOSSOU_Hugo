@@ -10,7 +10,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
         <style>
             body{
-                color: white;
+                background-image: url(/pics/back_portfolio.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
             h1 {
                 text-align: center;
@@ -20,7 +23,6 @@
             }
             h3 {
                 text-align: center;
-                margin-top: 5%;
                 color: black;
             }
             #square1 {
@@ -48,6 +50,8 @@
                 background-image: url(icons/carre_design.png);
                 background-size: cover;
                 background-position: center;
+                text-decoration: none;
+                color: white;
             }
 
             .nav {
@@ -78,7 +82,7 @@
         <nav>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/portofolio.html">Portfolio</a>
+                    <a class="nav-link" href="/index.html">Acceuil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/portofolio.html">Parcours</a>
@@ -92,32 +96,29 @@
             </ul>
         </nav>
     </header>
-    <h3>Bienvenue sur mon portfolio, <br> <i>survoler les carre pour decouvrir les trois types de projets</i></h3>
+    <h3>Bienvenue sur mon portfolio, <br> <i>survoler les carre pour decouvrir mes competences</i></h3>
     <div class="square-container">
-        <div class="square" id="square1">
-            <h2>Informatique</h2>
-            <ul>
-                <li>Element 1</li>
-                <li>Element 2</li>
-                <li>Element 3</li>
+        <a href="#" class="square" id="square1">
+            <h2 class="texte_square1">Informatique</h2>
+            <ul class="texte_square1">
+                <li>Mes ctf</li>
+                <li>developpement de site web</li>
+                <li></li>
             </ul>
-        </div>
-        <div class="square" id="square2">
-            <h2>reseau</h2>
-            <ul>
-                <li>Element 1</li>
-                <li>Element 2</li>
-                <li>Element 3</li>
+        </a>
+        <a href="#" class="square" id="square2">
+            <h2 class="texte_square2">Reseau</h2>
+            <ul class="texte_square2">
+                <li>gestion d'equipement actifs</li>
             </ul>
-        </div>
-        <div class="square" id="square3">
-            <h2>communication</h2>
-            <ul>
-                <li>Element 1</li>
-                <li>Element 2</li>
-                <li>Element 3</li>
+        </a>
+        <a href="#" class="square" id="square3">
+            <h2 class="texte_square3">communication</h2>
+            <ul class="texte_square3">
+                <li>Anglais</li>
+                <li>Fongbe</li>
             </ul>
-        </div>
+        </a>
     </div>
     <script>
         let carre1 = document.querySelector("#square1");
@@ -125,27 +126,57 @@
         let carre3 = document.querySelector("#square3");
 
         carre1.addEventListener("mouseover", function(event) {
-            document.body.style.backgroundColor = "white";
+            document.body.style.transition = "background-color 0.5s";
+            document.body.style.backgroundImage = "url(/pics/back_portfolio_black.jpg)";
             carre1.style.backgroundImage = "url(/pics/back_informatique.jpg)";
+            carre1.style.transform = "scale(1.2)";
+            carre1.style.transition = "transform 0.3s";
+            carre2.style.transform = "scale(0.8)";
+            carre3.style.transform = "scale(0.8)";
         });
         carre1.addEventListener("mouseout", function(event) {
-            document.body.style.backgroundColor = "black";
+            document.body.style.transition = "background-color 2s";
+            document.body.style.backgroundImage = "url(/pics/back_portfolio.jpg)";
+            carre1.style.transform = "scale(1)";
+            carre1.style.transition = "transform 0.3s";
+            carre2.style.transform = "scale(1)";
+            carre3.style.transform = "scale(1)";
         });
 
         carre2.addEventListener("mouseover", function(event) {
-            document.body.style.backgroundColor = "white";
+            document.body.style.transition = "background-color 0.5s";
+            document.body.style.backgroundImage = "url(/pics/back_portfolio_black.jpg)";
             carre2.style.backgroundImage = "url(/pics/back_reseau.jpg)";
+            carre2.style.transform = "scale(1.2)";
+            carre2.style.transition = "transform 0.3s";
+            carre1.style.transform = "scale(0.8)";
+            carre3.style.transform = "scale(0.8)";
         });
         carre2.addEventListener("mouseout", function(event) {
-            document.body.style.backgroundColor = "black";
+            document.body.style.transition = "background-color 2s";
+            document.body.style.backgroundImage = "url(/pics/back_portfolio.jpg)";
+            carre2.style.transform = "scale(1)";
+            carre2.style.transition = "transform 0.3s";
+            carre1.style.transform = "scale(1)";
+            carre3.style.transform = "scale(1)";
         });
 
         carre3.addEventListener("mouseover", function(event) {
-            document.body.style.backgroundColor = "white";
+            document.body.style.transition = "background-color 0.3s";
+            document.body.style.backgroundImage = "url(/pics/back_portfolio_black.jpg)";
             carre3.style.backgroundImage = "url(pics/back_communication)";
+            carre3.style.transform = "scale(1.2)";
+            carre3.style.transition = "transform 0.3s";
+            carre1.style.transform = "scale(0.8)";
+            carre2.style.transform = "scale(0.8)";
         });
         carre3.addEventListener("mouseout", function(event) {
-            document.body.style.backgroundColor = "black";
+            document.body.style.transition = "background-color 2s";
+            document.body.style.backgroundImage = "url(/pics/back_portfolio.jpg)";
+            carre3.style.transform = "scale(1)";
+            carre3.style.transition = "transform 0.3s";
+            carre1.style.transform = "scale(1)";
+            carre2.style.transform = "scale(1)";
         });
     </script>
 </body>
