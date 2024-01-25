@@ -13,7 +13,7 @@
                 background-image: url(/pics/back_portfolio.jpg);
                 background-size: cover;
                 background-position: center;
-                background-repeat: no-repeat;
+                /*background-repeat: no-repeat;*/
             }
             h1 {
                 text-align: center;
@@ -24,6 +24,11 @@
             h3 {
                 text-align: center;
                 color: black;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
             }
             #square1 {
                 text-align: center;
@@ -50,6 +55,7 @@
                 background-image: url(icons/carre_design.png);
                 background-size: cover;
                 background-position: center;
+                background-repeat: no-repeat;
                 text-decoration: none;
                 color: white;
             }
@@ -74,11 +80,14 @@
                 padding: 14px 16px;
                 text-decoration: none;
             }
+            h1:a{
+                color: blue;
+            }
         </style>
     </head>
     <body>
     <header>
-        <h1>Portofolio</h1>
+        <h1>Portfolio</h1>
         <nav>
             <ul class="nav">
                 <li class="nav-item">
@@ -103,7 +112,7 @@
             <ul class="texte_square1">
                 <li>Mes ctf</li>
                 <li>developpement de site web</li>
-                <li></li>
+                <div></div>
             </ul>
         </a>
         <a href="#" class="square" id="square2">
@@ -142,6 +151,14 @@
             carre2.style.transform = "scale(1)";
             carre3.style.transform = "scale(1)";
         });
+        carre1.addEventListener("click", function(event) {
+            carre1.style.width = "100%";
+            carre1.style.height = "100vh";
+            carre1.style.margin = "0";
+            /*carre1.style.transform = "none";
+            carre2.style.display = "none";
+            carre3.style.display = "none";*/
+        });
 
         carre2.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.5s";
@@ -160,11 +177,19 @@
             carre1.style.transform = "scale(1)";
             carre3.style.transform = "scale(1)";
         });
+        carre2.addEventListener("click", function(event) {
+            carre2.style.width = "100%";
+            carre2.style.height = "100vh";
+            carre2.style.margin = "0";
+            /*carre2.style.transform = "none";
+            carre1.style.display = "none";
+            carre3.style.display = "none";*/
+        });
 
         carre3.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.3s";
             document.body.style.backgroundImage = "url(/pics/back_portfolio_black.jpg)";
-            carre3.style.backgroundImage = "url(pics/back_communication)";
+            carre3.style.backgroundImage = "url(/pics/back_communication.jpg)";
             carre3.style.transform = "scale(1.2)";
             carre3.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(0.8)";
@@ -177,6 +202,14 @@
             carre3.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
             carre2.style.transform = "scale(1)";
+        });
+        carre3.addEventListener("click", function(event) {
+            carre3.style.width = "100%";
+            carre3.style.height = "100vh";
+            carre3.style.margin = "0";
+            /*carre3.style.transform = "none";
+            carre1.style.display = "none";
+            carre2.style.display = "none";*/
         });
     </script>
 </body>
