@@ -33,7 +33,6 @@
                 color: #fff;
                 margin: 0;
             }
-
             .bienvenue{
                 text-align: center;
                 color: #fff;
@@ -59,30 +58,47 @@
                 display: flex;
             }
             .nav {
+                display: flex;
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
+                justify-content: center;
             }
 
             .nav-item {
-                float: left;
+                display: inline;
+                padding: 1%;
+                
             }
 
-            .nav-link {
+            #nav-link_1{
                 display: block;
                 color: white;
-                text-align: center;
-                padding: 14px 16px;
                 text-decoration: none;
+                text-align: center;
             }
 
-            .nav-link:hover {
-                background-color: #ffffff;
-                border-radius: 50%;
-                color: #000d05;
+            #nav-link_2{
+                display: block;
+                color: white;
+                text-decoration: none;
+                text-align: center;
             }
 
+            #nav-link_3{
+                display: block;
+                color: white;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            #nav-link_4{
+                display: block;
+                color: white;
+                text-decoration: none;
+                text-align: center;
+            }
             #git{
                 position: fixed;
                 bottom: 50px;
@@ -112,7 +128,6 @@
                 display: flex;
                 flex-wrap: nowrap;
             }
-            
         </style>
     </head>
     <body>
@@ -121,16 +136,16 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/portofolio.html">Portfolio</a>
+                        <a id="nav-link_1" href="/portofolio.html">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/portofolio.html">Parcours</a>
+                        <a id="nav-link_2" " href="/portofolio.html">Parcours</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/skills.html">Passions</a>
+                        <a id="nav-link_3" href="/skills.html">Passions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/projets.html">Projets</a>
+                        <a id="nav-link_4" href="/projets.html">Projets</a>
                     </li>
                 </ul>
             </nav>
@@ -158,6 +173,22 @@
         <footer>
             <p id="text-light text-end">&copy; 2023 BOSSOU hugo. Tous droits réservés.</p>
         </footer>
-        <script src="js_basis/index.js"></script>
+        <script>
+            var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
+
+            navLinks.forEach(function(link) {
+                link.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = 'white';
+                    this.style.color = 'black';
+                    this.style.borderRadius = '50%';
+                });
+
+                link.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                    this.style.borderRadius = '50%';
+                });
+            });
+        </script>
     </body>
 </html>
