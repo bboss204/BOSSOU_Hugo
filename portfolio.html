@@ -29,15 +29,6 @@
                 margin: 0;
                 padding: 0;
             }
-            #square1 {
-                text-align: center;
-            }
-            #square2 {
-                text-align: center;
-            }
-            #square3 {
-                text-align: center;
-            }
             .square-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -45,10 +36,10 @@
                 justify-content: center;
                 align-items: center;
                 height: 100vh; 
-                margin: 5%;
+                margin: 1%;
             }
             .square {
-                width: 25%;
+                width: 30%;
                 height: 500px;
                 margin: 10px;
                 background-image: url(icons/carre_design.png);
@@ -58,11 +49,9 @@
                 text-decoration: none;
                 color: white;
                 box-shadow: 
-                1px 1px 0.2px 0.2px #fff,
                 4px 3px 4px 2px rgb(75, 75, 75),
                 4px 3px 6px 4px rgb(0, 0, 0);
-                ;
-                border-radius: 3%;
+                border-radius: 1%;
             }
 
             .nav {
@@ -100,6 +89,35 @@
                 text-align: center;
                 font-size: 1.5em;
             }
+            #square1 {
+                text-align: center;
+            }
+            #CTF_box {
+                width: 30%;
+                height: 50%;
+                background-color: white;
+                border-radius: 1%;
+                position: relative; 
+                top: 10%;
+                margin: 2%;
+                display: none;
+            }
+            #Developpement_web {
+                width: 30%;
+                height: 50%;
+                background-color: white;
+                border-radius: 1%;
+                position: relative; 
+                top: 10%;
+                margin: 2%;
+                display: none;
+            }
+            #square2 {
+                text-align: center;
+            }
+            #square3 {
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -122,50 +140,59 @@
             </ul>
         </nav>
     </header>
-    <h3>Bienvenue sur mon portfolio. <br> <i>Survoler les carrés pour decouvrir mes competences</i></h3>
+    <h3>Bienvenue sur mon portfolio.</h3>
     <div class="square-container">
         <a href="#square1" class="square" id="square1">
-            <h2 class="texte_square1">Informatique</h2>
-            <ul class="texte_square1">
-                <li> Mes CTF (capture the flag) </li>
-                <li> Developpement de site web </li>
-            </ul>
-            <div>
-
-                
+            <header>
+                <h2 class="texte_square1">Informatique</h2>
+                <ul class="texte_square1">
+                    <li> Mes CTF (capture the flag) </li>
+                    <li> Developpement de site web </li>
+                </ul>
+            </header>
+            <div id="CTF_box">
             </div>
+            <div id="Developpement_web"></div>
         </a>
         <a href="#square2" class="square" id="square2">
-            <h2 class="texte_square2"> Réseau </h2>
-            <ul class="texte_square2">
-                <li> Gestion d'equipement actifs </li>
-            </ul>
+            <header>
+                <h2 class="texte_square2"> Réseau </h2>
+                <ul class="texte_square2">
+                    <li> Gestion d'equipement actifs </li>
+                </ul>
+            </header>
         </a>
         <a href="#square3" class="square" id="square3">
-            <h2 class="texte_square3">Communication</h2>
-            <ul class="texte_square3">
-                <li> Anglais </li>
-                <li> Fongbe </li>
-            </ul>
+            <header>
+                <h2 class="texte_square3">Communication</h2>
+                <ul class="texte_square3">
+                    <li> Anglais </li>
+                    <li> Fongbe </li>
+                </ul>
+            </header>
         </a>
     </div>
     <script>
         let carre1 = document.querySelector("#square1");
         let carre2 = document.querySelector("#square2");
         let carre3 = document.querySelector("#square3");
+        let CTF_box = document.querySelector("#CTF_box");
+        let Developpement_web = document.querySelector("#Developpement_web");
 
         carre1.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.5s";
-            document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";
+            /*document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";*/
             carre1.style.backgroundImage = "url(pics/back_informatique.jpg)";
             carre1.style.transform = "scale(1.2)";
             carre1.style.transition = "transform 0.3s";
             carre2.style.transform = "scale(0.8)";
             carre3.style.transform = "scale(0.8)";
+            CTF_box.style.display = "inline-block";
+            Developpement_web.style.display = "inline-block";
         });
         carre1.addEventListener("mouseout", function(event) {
             document.body.style.transition = "background-color 2s";
-            document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";
+            /*document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";*/
             carre1.style.transform = "scale(1)";
             carre1.style.transition = "transform 0.3s";
             carre2.style.transform = "scale(1)";
@@ -179,7 +206,7 @@
 
         carre2.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.5s";
-            document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";
+            /*document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";*/
             carre2.style.backgroundImage = "url(pics/back_reseau.jpg)";
             carre2.style.transform = "scale(1.2)";
             carre2.style.transition = "transform 0.3s";
@@ -188,7 +215,7 @@
         });
         carre2.addEventListener("mouseout", function(event) {
             document.body.style.transition = "background-color 2s";
-            document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";
+            /*document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";*/
             carre2.style.transform = "scale(1)";
             carre2.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
@@ -202,7 +229,7 @@
 
         carre3.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.3s";
-            document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";
+            /*document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";*/
             carre3.style.backgroundImage = "url(pics/back_communication.jpg)";
             carre3.style.transform = "scale(1.2)";
             carre3.style.transition = "transform 0.3s";
@@ -211,7 +238,7 @@
         });
         carre3.addEventListener("mouseout", function(event) {
             document.body.style.transition = "background-color 2s";
-            document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";
+            /*document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";*/
             carre3.style.transform = "scale(1)";
             carre3.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
