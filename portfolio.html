@@ -35,6 +35,12 @@
                 font-size: 12px;
                 background-color: whitesmoke;
             }
+            img {
+                width: 250px;
+                height: 250px;
+                margin: 0;
+                padding: 0;
+            }
             .square-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -98,6 +104,15 @@
             #square1 {
                 text-align: center;
             }
+            conteneur_info {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; 
+                margin: 1%;
+            }
             #CTF_box {
                 width: 30%;
                 height: 50%;
@@ -156,15 +171,18 @@
                     <li> Developpement de site web </li>
                 </ul>
             </header>
-            <div id="CTF_box">
-                <header>
-                    <p> Depuis la seconde je m'interesse fortment a la securite Informatique ainsi en seconde j'ai commence a apprendre a faire des captures the flag qui sont des challenges de securite informqtique <br>en cours ... </p>
-                </header>
-            </div>
-            <div id="Developpement_web">
-                <header>
-                    <p> Pendant mes années de collège, j'ai découvert le langage HTML et CSS, ce qui m'a permis de créer de petits sites web que je publie aujourd'hui. Tout le site sur lequel vous naviguez est codé en HTML et CSS, avec l'ajout de JavaScript que j'ai initié au sein de ma formation en BUT Réseau Télécommunication. J'ai concrétisé et développé ces compétences en programmant entièrement ce site web, et vous pouvez retrouver l'intégralité du code sur mon GitHub.^^ </p> 
-                </header>
+            <div id="conteneur_info">
+                <div id="CTF_box">
+                    <header>
+                        <p> Depuis la seconde je m'interesse fortment a la securite Informatique ainsi en seconde j'ai commence a apprendre a faire des captures the flag qui sont des challenges de securite informqtique <br>en cours ... </p>
+                    </header>
+                </div>
+                <div id="Developpement_web">
+                    <header>
+                        <p> Pendant mes années de collège, j'ai découvert le langage HTML et CSS, ce qui m'a permis de créer de petits sites web que je publie aujourd'hui. Tout le site sur lequel vous naviguez est codé en HTML et CSS, avec l'ajout de JavaScript que j'ai initié au sein de ma formation en BUT Réseau Télécommunication. J'ai concrétisé et développé ces compétences en programmant entièrement ce site web, et vous pouvez retrouver l'intégralité du code sur mon GitHub.^^ <br> </p> 
+                    </header>
+                    <img id="GitHub" src="icons/githublogo.png" alt="git GitHub">
+                </div>
             </div>
         </a>
         <a href="#square2" class="square" id="square2">
@@ -174,7 +192,7 @@
                     <li> Gestion d'equipement actifs </li>
                 </ul>
             </header>
-            <div id="equipement acrtif">
+            <div id="equipement actif">
                 <p>en cours ...</p>
             </div>
         </a>
