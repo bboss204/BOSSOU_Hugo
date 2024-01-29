@@ -229,6 +229,7 @@
         let carre3 = document.querySelector("#square3");
         let CTF_box = document.querySelector("#CTF_box");
         let Developpement_web = document.querySelector("#Developpement_web");
+        let github_img = document.querySelector("#GitHub");
 
         carre1.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.5s";
@@ -253,6 +254,11 @@
             carre1.style.margin = "0";
             CTF_box.style.display = "inline-block";
             Developpement_web.style.display = "inline-block";
+        });
+        github_img.addEventListener("mouseover", function(event) {
+            github_img.style.transform = "rotate(360deg)";
+            github_img.style.transformOrigin = "center"; 
+            github_img.style.transition = "transform 1s";
         });
 
         carre2.addEventListener("mouseover", function(event) {
