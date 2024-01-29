@@ -32,7 +32,8 @@
             p {
                 text-align: center;
                 color: black;
-                size: 15px;
+                font-size: 15px;
+                background-color: whitesmoke;
             }
             .square-container {
                 display: flex;
@@ -156,10 +157,10 @@
                 </ul>
             </header>
             <div id="CTF_box">
-                <p>depuis la seconde je m'interesse fortment a la securite Informatique ainsi en seconde j'ai commence a apprendre a faire des captures the flag qui sont des challenges de securite informqtique</p>
+                <p> Depuis la seconde je m'interesse fortment a la securite Informatique ainsi en seconde j'ai commence a apprendre a faire des captures the flag qui sont des challenges de securite informqtique <br>en cours ... </p>
             </div>
             <div id="Developpement_web"> 
-                <p> Depuis mes année college j'ai decouvert le langage html et css ce qui m'a permis de faire de petit site web et de les publier aujourd'hui tout le site web sur lequel vous naviguer est coder en html et css en plus du java script que j'ai initier au seins de ma formation BUT reseau telecommunication et que je concretise et developpe en codant mois mem de a a z ce site web vous pouver retrouver tout le code du site sur mon git hub ^^</p> 
+                <p> Pendant mes années de collège, j'ai découvert le langage HTML et CSS, ce qui m'a permis de créer de petits sites web que je publie aujourd'hui. Tout le site sur lequel vous naviguez est codé en HTML et CSS, avec l'ajout de JavaScript que j'ai initié au sein de ma formation en BUT Réseau Télécommunication. J'ai concrétisé et développé ces compétences en programmant entièrement ce site web, et vous pouvez retrouver l'intégralité du code sur mon GitHub.^^ </p> 
             </div>
         </a>
         <a href="#square2" class="square" id="square2">
@@ -169,6 +170,9 @@
                     <li> Gestion d'equipement actifs </li>
                 </ul>
             </header>
+            <div id="equipement acrtif">
+                <p>en cours ...</p>
+            </div>
         </a>
         <a href="#square3" class="square" id="square3">
             <header>
@@ -178,6 +182,9 @@
                     <li> Fongbe </li>
                 </ul>
             </header>
+            <div id="Anglais">
+                <p> en cours...</p>
+            </div>
         </a>
     </div>
     <script>
@@ -195,8 +202,6 @@
             carre1.style.transition = "transform 0.3s";
             carre2.style.transform = "scale(0.8)";
             carre3.style.transform = "scale(0.8)";
-            CTF_box.style.display = "inline-block";
-            Developpement_web.style.display = "inline-block";
         });
         carre1.addEventListener("mouseout", function(event) {
             document.body.style.transition = "background-color 2s";
@@ -210,6 +215,8 @@
             carre1.style.width = "100%";
             carre1.style.height = "100vh";
             carre1.style.margin = "0";
+            CTF_box.style.display = "inline-block";
+            Developpement_web.style.display = "inline-block";
         });
 
         carre2.addEventListener("mouseover", function(event) {
