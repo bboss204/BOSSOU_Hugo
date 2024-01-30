@@ -36,6 +36,7 @@
                 background-color: rgba(245, 245, 245, 0.829);
                 border-radius: 1%;
                 padding: 1%;
+                margin: 0;
             }
             .square-container {
                 display: flex;
@@ -114,20 +115,26 @@
                 height: 50%;
                 background-image: url(pics/back_portfolio_black.jpg);
                 border-radius: 1%;
-                margin: 2%;
                 display: none;
+                flex-direction: column;
+                justify-content: center;
+                margin: 2%;
             }
             #Developpement_web {
                 width: 30%;
                 height: 50%;
                 background-image: url(pics/back_portfolio_black.jpg);
                 border-radius: 1%;
-                margin: 2%;
                 display: none;
+                margin-bottom: 1%;
+                flex-direction: column;
+                margin: 2%;
             }
             #GitHub {
-                width: 62%;
-                height: 62%;
+                min-width: 0;
+                min-height: 0;
+                width: 50%;
+                height: 50%;
                 margin: 0;
                 padding: 0;
                 border-radius: 50%;
@@ -176,7 +183,8 @@
                     <header>
                         <p> Depuis la seconde je m'interesse fortment a la securite Informatique ainsi en seconde
                              j'ai commence a apprendre a faire des captures the flag qui sont des challenges de securite informqtique
-                              <br>en cours ... </p>
+                              <br>en cours ... 
+                        </p>
                     </header>
                 </div>
                 <div id="Developpement_web">
@@ -247,7 +255,7 @@
             carre1.style.height = "100vh";
             carre1.style.margin = "0";
             CTF_box.style.display = "inline-block";
-            Developpement_web.style.display = "inline-block";
+            Developpement_web.style.display = "flex";
         });
         github_img.addEventListener("mouseover", function(event) {
             github_img.style.transform = "rotate(360deg)";
