@@ -135,8 +135,7 @@
                 min-height: 0;
                 width: 50%;
                 height: 50%;
-                margin: 0;
-                padding: 0;
+                margin: auto;
                 border-radius: 50%;
                 box-shadow: 0 0 10px #2f3983;
             }
@@ -170,7 +169,7 @@
     </header>
     <h3>Bienvenue sur mon portfolio.</h3>
     <div class="square-container">
-        <a href="#square1" class="square" id="square1">
+        <div class="square" id="square1">
             <header>
                 <h2 class="texte_square1">Informatique</h2>
                 <ul class="texte_square1">
@@ -195,13 +194,16 @@
                                Tout le site sur lequel vous naviguez est codé en HTML et CSS,
                                 avec l'ajout de JavaScript que j'ai initié au sein de ma formation en BUT Réseau Télécommunication.
                                  J'ai concrétisé et développé ces compétences en programmant entièrement ce site web,
-                                  et vous pouvez retrouver l'intégralité du code sur mon GitHub.^^ (en page d'acceuil.)<br> </p> 
+                                  et vous pouvez retrouver l'intégralité du code sur mon GitHub.^^ (en page d'acceuil.)<br> 
+                                </p> 
                     </header>
+                    <a  href="github.com">
                     <img id="GitHub" src="icons/githublogo.png" alt="git GitHub">
+                    </a>
                 </div>
             </div>
-        </a>
-        <a href="#square2" class="square" id="square2">
+        </div>
+        <div class="square" id="square2">
             <header>
                 <h2 class="texte_square2"> Réseau </h2>
                 <ul class="texte_square2">
@@ -211,8 +213,8 @@
             <div id="equipement_actif">
                 <p>en cours ...</p>
             </div>
-        </a>
-        <a href="#square3" class="square" id="square3">
+        </div>
+        <div href="#square3" class="square" id="square3">
             <header>
                 <h2 class="texte_square3">Communication</h2>
                 <ul class="texte_square3">
@@ -223,7 +225,7 @@
             <div id="Anglais">
                 <p> en cours...</p>
             </div>
-        </a>
+        </div>
     </div>
     <script>
         let carre1 = document.querySelector("#square1");
@@ -256,6 +258,7 @@
             carre1.style.margin = "0";
             CTF_box.style.display = "inline-block";
             Developpement_web.style.display = "flex";
+            window.location.href = "#square1";
         });
         github_img.addEventListener("mouseover", function(event) {
             github_img.style.transform = "rotate(360deg)";
@@ -285,6 +288,7 @@
             carre2.style.width = "100%";
             carre2.style.height = "100vh";
             carre2.style.margin = "0";
+            window.location.href = "#square2";
         });
 
         carre3.addEventListener("mouseover", function(event) {
@@ -308,6 +312,7 @@
             carre3.style.width = "100%";
             carre3.style.height = "100vh";
             carre3.style.margin = "0";
+            window.location.href = "#square3";
         });
         
 
