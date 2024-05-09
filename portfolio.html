@@ -8,13 +8,10 @@
         <link rel="icon" type="image/png" href="icons/montain.png"/>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
         <style>
-            html{
-                background-image: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.8) 100%);
-                background-size: cover;
-                background-repeat: no-repeat;
-                overflow: scroll;
-            }
             body{
+                background-image: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.8) 100%);
+                
+                background-repeat: no-repeat;
                 font-family: 'Nunito', sans-serif;
                 padding: 0;
                 margin: 0;
@@ -54,14 +51,12 @@
                 position: fixed;
                 width: 100%;
             }
-            div {
-               overflow: auto;
-            }
             .introp {
                 text-align: center;
                 color: white;
                 margin:0;
                 padding: 0;
+                padding-bottom: 5px;
                 overflow: hidden;
             }
             .square-container {
@@ -88,7 +83,7 @@
                 4px 3px 4px 2px rgb(75, 75, 75),
                 4px 3px 6px 4px rgb(0, 0, 0);
                 border-radius: 1%;
-                overflow: ;
+                overflow: hidden;
             }
 
             .nav {
@@ -342,6 +337,7 @@
             carre1.style.width = "100%";
             carre1.style.height = "100vh";
             carre1.style.margin = "0";
+            carre1.style.overflow = "scroll";
             CTF_box.style.display = "inline-block";
             Developpement_web.style.display = "flex";
             window.location.href = "#square1";
