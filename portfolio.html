@@ -58,6 +58,7 @@
                 padding: 0;
                 padding-bottom: 5px;
                 overflow: hidden;
+
             }
             .square-container {
                 display: flex;
@@ -317,6 +318,7 @@
         let carre2 = document.querySelector("#square2");
         let carre3 = document.querySelector("#square3");
         let CTF_box = document.querySelector("#CTF_box");
+        let intro = document.querySelector(".introp");
         let Developpement_web = document.querySelector("#Developpement_web");
         let github_img = document.querySelector("#GitHub");
         var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
@@ -342,6 +344,7 @@
             carre1.style.width = "100%";
             carre1.style.height = "100vh";
             carre1.style.margin = "0";
+            intro.style.display = "none";
             carre1.style.overflow = "scroll";
             CTF_box.style.display = "inline-block";
             Developpement_web.style.display = "flex";
