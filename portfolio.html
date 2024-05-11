@@ -207,11 +207,21 @@
                 margin: auto;
                 border-radius: 50%;
                 box-shadow: 0 0 10px #2f3983;
+                animation-name: git_glow;
+                animation-duration: 5s;
+                animation-delay: -1;
+                animation-iteration-count: infinite;
             }
             #git_img {
                 width: 100%;
                 height: 100%;
                 border-radius: 50%;
+            }
+            @keyframes git_glow {
+            0%   {box-shadow: 0 0 10px #b8befa;}
+            25%  {box-shadow: 0 0 10px #2f3983;}
+            50%  {box-shadow: 0 0 10px #afb5dc;}
+            100% {box-shadow: 0 0 10px #493ba7;}
             }
             #square2 {
                 text-align: center;
@@ -342,7 +352,7 @@
         });
         carre1.addEventListener("click", function(event) {
             carre1.style.width = "100%";
-            carre1.style.height = "100vh";
+            carre1.style.height = "90vh";
             carre1.style.margin = "0";
             intro.style.display = "none";
             carre1.style.overflow = "scroll";
@@ -350,12 +360,12 @@
             Developpement_web.style.display = "flex";
             window.location.href = "#square1";
         });
-        github_img.addEventListener("mouseover", function(event) {
+        /*github_img.addEventListener("mouseover", function(event) {
             github_img.style.transform = "rotate(360deg)";
             github_img.style.transformOrigin = "center"; 
             github_img.style.transition = "transform 1s";
             github_img.style.boxShadow = "0 0 10px 5px #2f3983";
-        });
+        });*/
 
         carre2.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.5s";
