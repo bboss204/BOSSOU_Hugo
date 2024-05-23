@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page d'Accueil</title>
+        <title>Page passions</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="icons/montain.png"/>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
@@ -112,39 +112,6 @@
                 text-align: center;
                 padding: 8px;
             }
-            #phintr{
-                font-size: 18px;
-                font-style: bold;
-            }
-            #git{
-                position: fixed;
-                bottom: 50px;
-                right: 60px;
-            }
-
-            #linkedin{
-                position: fixed;
-                bottom: 50px;
-                right: 30px;
-            }
-
-            #profil{
-                height: 500px;
-                width: 500px;
-                clip-path: circle(200px);
-                shape-outside: circle(50%);
-                background-image: url(pics/pic_profile.jpg);
-                margin-top: 4%;
-                margin-left: 1%;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: 0.5ch;
-            }
-
-            #contenaire{
-                display: flex;
-                flex-wrap: nowrap;
-            }
         </style>
     </head>
     <body>
@@ -153,13 +120,13 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a id="nav-link_1" href="portfolio.html"> Portfolio </a>
+                        <a id="nav-link_1" href="index.html"> Accueill </a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link_2" href="parcours.html"> Parcours </a>
+                        <a id="nav-link_2" href="portfolio.html"> Portfolio </a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link_3" href="passions.html"> Passions </a>
+                        <a id="nav-link_3" href="parcours.html"> Parcours </a>
                     </li>
                     <li class="nav-item">
                         <a id="nav-link_4" href="projets.html"> Projets </a>
@@ -167,47 +134,5 @@
                 </ul>
             </nav>
         </header>
-        <div id="contenaire">
-            <div>
-                <div id="profil">jkhkhkh</div>
-            </div>
-            <div>
-                <div class="bienvenue">
-                    <h1> Bienvenue </h1>
-                    <p id="phintr"> Vous êtes sur l'accueil de mon site web personnel </p>
-                </div>
-                <h1 class="text_droite">Qui suis-je ?</h1>
-                <p class="text_droite">Je suis étudiant en première année de BUT Réseau et Télécommunications à l'Université Nice Côte d'Azur, passionné par le domaine de la sécurité informatique.
-                 je souhaite devenir pentester.
-                 Je vous invite a visiter mon site web ou vous pourrez vous informer sur moi mes passion mais aussi sur mon parcours et mes projet. 
-                 <br><i>pour me contacter en bas a droite de la page vous avez mon git hub et mon linked in.</i>  
-                </p>
-            </div>
-        </div>
-        <div class="logos">
-            <a id="linkedin" href="https://fr.linkedin.com/in/bossou-hugo/fr"> <img src="icons/linkedin.png" alt="logo linked in "> </a>
-            <a id="git" href="https://github.com/bboss204"> <img src="icons/code.png" alt="logo GitHub "> </a>
-        </div>
-        </div>
-        <footer>
-            <p id="text-end">&copy; 2023 B hugo. Tous droits réservés. </p>
-        </footer>
-        <script>
-            var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
-
-            navLinks.forEach(function(link) {
-                link.addEventListener('mouseover', function() {
-                    this.style.backgroundColor = 'white';
-                    this.style.color = 'black';
-                    this.style.borderRadius = '50%';
-                });
-
-                link.addEventListener('mouseout', function() {
-                    this.style.backgroundColor = '';
-                    this.style.color = '';
-                    this.style.borderRadius = '50%';
-                });
-            });
-        </script>
     </body>
 </html>
