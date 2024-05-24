@@ -51,6 +51,28 @@
                 position: fixed;
                 width: 100%;
             }
+            .nav {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                text-align: center;
+                color: white;
+            }
+
+            .nav-item {
+                display: inline-block;
+                text-align: center;
+                padding: 1%;
+            }
+
+            .nav-link {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
             .introp {
                 text-align: center;
                 color: white;
@@ -84,34 +106,7 @@
                 border-radius: 10px;
                 overflow: hidden;
                 transition: all 0.3s ease;
-                border: solid 3px yellowgreen;
-            }
-
-            .square:hover {
-                transform: rotateY(180deg);
-            }
-
-            .nav {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                text-align: center;
-                color: white;
-            }
-
-            .nav-item {
-                display: inline-block;
-                text-align: center;
-                padding: 1%;
-            }
-
-            .nav-link {
-                display: inline-block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
+                border: solid 2px yellowgreen;
             }
 
             .tempo{
@@ -122,9 +117,9 @@
 
             .title_square {
                 display: block;
-                justify-content: center;
                 margin: 0 auto;
-                color: white;
+                height: 50px;
+                width: 50px;
             }
 
             .texte_square1 {
@@ -287,12 +282,8 @@
     </div>
     <div class="square-container">
         <div class="square" id="square1">
-            <div>
+            <div class="title_square">
                 <h2 class="texte_square1">Informatique</h2>
-                <ul class="texte_square1">
-                    <li> Mes CTF (capture the flag) </li>
-                    <li> Developpement de site web </li>
-                </ul>
             </div>
             <div id="conteneur_info">
                 <div id="CTF_box">
@@ -323,11 +314,8 @@
             </div>
         </div>
         <div class="square" id="square2">
-            <div>
+            <div class="title_square">
                 <h2 class="texte_square2"> Réseau </h2>
-                <ul class="texte_square2">
-                    <li> Création d'infrastructure réseaux d'entreprise. </li>
-                </ul>
             </div>
             <div id="equipement_actif">
             </div>
@@ -335,10 +323,6 @@
         <div href="#square3" class="square" id="square3">
             <div class="title_square">
                 <h2 class="texte_square3">Communication</h2>
-                <ul class="texte_square3">
-                    <li> Anglais </li>
-                    <li> Fongbe </li>
-                </ul>
             </div>
             <div id="Anglais">
             </div>
