@@ -66,13 +66,13 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                height: 100vh; 
+                height: 90vh; 
                 margin: 0;
                 overflow: scroll;
             }
             .square {
                 width: 30%;
-                height: 500px;
+                height: 550px;
                 margin: 10px;
                 margin-top: 0;
                 background-image: url(icons/carre_design.png);
@@ -81,11 +81,14 @@
                 background-repeat: no-repeat;
                 text-decoration: none;
                 color: white;
-                box-shadow: 
-                4px 3px 4px 2px rgb(75, 75, 75),
-                4px 3px 6px 4px rgb(0, 0, 0);
-                border-radius: 1%;
+                border-radius: 10px;
                 overflow: hidden;
+                transition: all 0.3s ease;
+                border: solid 3px yellowgreen;
+            }
+
+            .square:hover {
+                transform: rotateY(180deg);
             }
 
             .nav {
@@ -110,30 +113,43 @@
                 padding: 14px 16px;
                 text-decoration: none;
             }
+
             .tempo{
                 background-color: whitesmoke;
                 color: black;
                 text-align: left;
             }
+
+            .title_square {
+                display: block;
+                justify-content: center;
+                margin: 0 auto;
+                color: white;
+            }
+
             .texte_square1 {
                 color: white;
                 text-align: center;
                 font-size: 1.5em;
             }
+
             .texte_square2 {
                 color: white;
                 text-align: center;
                 font-size: 1.5em;
             }
+
             .texte_square3 {
                 color: white;
                 text-align: center;
                 font-size: 1.5em;
             }
+
             #general {
                 margin: 0;
                 overflow: hidden;
             }
+
             #nav-link_1{
                 display: block;
                 color: white;
@@ -233,11 +249,12 @@
             #square2 {
                 text-align: center;
             }
+
             #square3 {
                 text-align: center;
             }
-            #text-end
-            {
+
+            #text-end {
                 text-align: center;
                 color: white;
             }
@@ -313,11 +330,10 @@
                 </ul>
             </div>
             <div id="equipement_actif">
-                <p class="tempo">en cours ...</p>
             </div>
         </div>
         <div href="#square3" class="square" id="square3">
-            <div>
+            <div class="title_square">
                 <h2 class="texte_square3">Communication</h2>
                 <ul class="texte_square3">
                     <li> Anglais </li>
@@ -325,7 +341,6 @@
                 </ul>
             </div>
             <div id="Anglais">
-                <p class="tempo"> en cours...</p>
             </div>
         </div>
     </div>
@@ -344,7 +359,6 @@
 
         carre1.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.5s";
-            /*document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";*/
             carre1.style.backgroundImage = "url(pics/back_informatique.jpg)";
             carre1.style.transform = "scale(1.2)";
             carre1.style.transition = "transform 0.3s";
@@ -353,7 +367,6 @@
         });
         carre1.addEventListener("mouseout", function(event) {
             document.body.style.transition = "background-color 2s";
-            /*document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";*/
             carre1.style.transform = "scale(1)";
             carre1.style.transition = "transform 0.3s";
             carre2.style.transform = "scale(1)";
@@ -369,16 +382,9 @@
             Developpement_web.style.display = "flex";
             window.location.href = "#square1";
         });
-        /*github_img.addEventListener("mouseover", function(event) {
-            github_img.style.transform = "rotate(360deg)";
-            github_img.style.transformOrigin = "center"; 
-            github_img.style.transition = "transform 1s";
-            github_img.style.boxShadow = "0 0 10px 5px #2f3983";
-        });*/
 
         carre2.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.5s";
-            /*document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";*/
             carre2.style.backgroundImage = "url(pics/back_reseau.jpg)";
             carre2.style.transform = "scale(1.2)";
             carre2.style.transition = "transform 0.3s";
@@ -387,7 +393,6 @@
         });
         carre2.addEventListener("mouseout", function(event) {
             document.body.style.transition = "background-color 2s";
-            /*document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";*/
             carre2.style.transform = "scale(1)";
             carre2.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
@@ -402,7 +407,6 @@
 
         carre3.addEventListener("mouseover", function(event) {
             document.body.style.transition = "background-color 0.3s";
-            /*document.body.style.backgroundImage = "url(pics/back_portfolio_black.jpg)";*/
             carre3.style.backgroundImage = "url(pics/back_communication.jpg)";
             carre3.style.transform = "scale(1.2)";
             carre3.style.transition = "transform 0.3s";
@@ -411,7 +415,6 @@
         });
         carre3.addEventListener("mouseout", function(event) {
             document.body.style.transition = "background-color 2s";
-            /*document.body.style.backgroundImage = "url(pics/back_portfolio.jpg)";*/
             carre3.style.transform = "scale(1)";
             carre3.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
@@ -424,20 +427,19 @@
             window.location.href = "#square3";
         });
 
-            navLinks.forEach(function(link) {
-                link.addEventListener('mouseover', function() {
-                    this.style.backgroundColor = 'white';
-                    this.style.color = 'black';
-                    this.style.borderRadius = '50%';
-                });
-
-                link.addEventListener('mouseout', function() {
-                    this.style.backgroundColor = '';
-                    this.style.color = '';
-                    this.style.borderRadius = '50%';
-                });
+        navLinks.forEach(function(link) {
+            link.addEventListener('mouseover', function() {
+                this.style.backgroundColor = 'white';
+                this.style.color = 'black';
+                this.style.borderRadius = '50%';
             });
-        
+
+            link.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '';
+                this.style.color = '';
+                this.style.borderRadius = '50%';
+            });
+        });
 
         </script>
     </div>
