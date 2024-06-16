@@ -265,7 +265,7 @@
                     <a id="nav-link_2" href="parcours"> Parcours </a>
                 </li>
                 <li class="nav-item">
-                    <a id="nav-link_3" href="skills.html"> Passions </a>
+                    <a id="nav-link_3" href="passion.html"> Passions </a>
                 </li>
                 <li class="nav-item">
                     <a id="nav-link_4" href="projets.html"> Projets </a>
@@ -347,8 +347,12 @@
             carre1.style.backgroundImage = "url(pics/back_informatique.jpg)";
             carre1.style.transform = "scale(1.2)";
             carre1.style.transition = "transform 0.3s";
-            carre2.style.transform = "scale(0.8)";
-            carre3.style.transform = "scale(0.8)";
+            if(!clicked2) {
+                carre2.style.transform = "scale(0.8)";
+            }
+            if(!clicked3) {
+                carre3.style.transform = "scale(0.8)";
+            }
         }});
 
         carre1.addEventListener("mouseout", function(event) {
@@ -377,20 +381,29 @@
             carre2.style.backgroundImage = "url(pics/back_reseau.jpg)";
             carre2.style.transform = "scale(1.2)";
             carre2.style.transition = "transform 0.3s";
-            carre1.style.transform = "scale(0.8)";
-            carre3.style.transform = "scale(0.8)";
+            if(!clicked1) {
+                carre1.style.transform = "scale(0.8)";
+            }
+            if(!clicked3) {
+                carre3.style.transform = "scale(0.8)";
+            }
         }});
         carre2.addEventListener("mouseout", function(event) {
             if(!clicked2) {
             carre2.style.transform = "scale(1)";
             carre2.style.transition = "transform 0.3s";
-            carre1.style.transform = "scale(1)";
-            carre3.style.transform = "scale(1)";
+            if(!clicked1) {
+                carre1.style.transform = "scale(1)";
+            }
+            if(!clicked3) {
+                carre3.style.transform = "scale(1)";
+            }
         }});
         carre2.addEventListener("click", function(event) {
             carre2.style.width = "100%";
             carre2.style.height = "100vh";
             carre2.style.margin = "0";
+            intro.style.display = "none";
             window.location.href = "#square2";
             clicked2 = true;
         });
@@ -400,23 +413,31 @@
             carre3.style.backgroundImage = "url(pics/back_communication.jpg)";
             carre3.style.transform = "scale(1.2)";
             carre3.style.transition = "transform 0.3s";
-            carre1.style.transform = "scale(0.8)";
-            carre2.style.transform = "scale(0.8)";
+            if(!clicked2) {
+                carre2.style.transform = "scale(0.8)";
+            }
+            if(!clicked1) {
+                carre1.style.transform = "scale(0.8)";
+            }
         }});
 
         carre3.addEventListener("mouseout", function(event) {
             if(!clicked3){ 
             carre3.style.transform = "scale(1)";
             carre3.style.transition = "transform 0.3s";
+            if(!clicked2) {
+                carre2.style.transform = "scale(1)";
+            }
+            if(!clicked1) {
             carre1.style.transform = "scale(1)";
-            carre2.style.transform = "scale(1)";
-            cl
+            }
         }});
 
         carre3.addEventListener("click", function(event) {
             carre3.style.width = "100%";
             carre3.style.height = "100vh";
             carre3.style.margin = "0";
+            intro.style.display = "none";
             window.location.href = "#square3";
             clicked3 = true;
         });
