@@ -338,25 +338,27 @@
         let Developpement_web = document.querySelector("#Developpement_web");
         let github_img = document.querySelector("#GitHub");
         var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
-        let clicked1 = false;
-        let clicked2 = false;
-        let clicked3 = false;
+        var clicked1 = false;
+        var clicked2 = false;
+        var clicked3 = false;
 
-        if(!clicked1) { 
-            carre1.addEventListener("mouseover", function(event) {
+        carre1.addEventListener("mouseover", function(event) {
+            if(!clicked1) { 
             carre1.style.backgroundImage = "url(pics/back_informatique.jpg)";
             carre1.style.transform = "scale(1.2)";
             carre1.style.transition = "transform 0.3s";
             carre2.style.transform = "scale(0.8)";
             carre3.style.transform = "scale(0.8)";
-        });
+        }});
+
         carre1.addEventListener("mouseout", function(event) {
+            if(!clicked1) { 
             carre1.style.transform = "scale(1)";
             carre1.style.transition = "transform 0.3s";
             carre2.style.transform = "scale(1)";
             carre3.style.transform = "scale(1)";
-        })
-        };
+        }});
+
         carre1.addEventListener("click", function(event) {
             carre1.style.width = "100%";
             carre1.style.height = "80vh";
@@ -369,21 +371,22 @@
             clicked1 = true;
         });
 
-        if(!clicked2) {
-            carre2.addEventListener("mouseover", function(event) {
+        
+        carre2.addEventListener("mouseover", function(event) {
+            if(!clicked2) {
             carre2.style.backgroundImage = "url(pics/back_reseau.jpg)";
             carre2.style.transform = "scale(1.2)";
             carre2.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(0.8)";
             carre3.style.transform = "scale(0.8)";
-        });
+        }});
         carre2.addEventListener("mouseout", function(event) {
+            if(!clicked2) {
             carre2.style.transform = "scale(1)";
             carre2.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
             carre3.style.transform = "scale(1)";
-        })
-        };
+        }});
         carre2.addEventListener("click", function(event) {
             carre2.style.width = "100%";
             carre2.style.height = "100vh";
@@ -392,25 +395,30 @@
             clicked2 = true;
         });
 
-        if(!clicked3){ carre3.addEventListener("mouseover", function(event) {
+        carre3.addEventListener("mouseover", function(event) {
+            if(!clicked3){ 
             carre3.style.backgroundImage = "url(pics/back_communication.jpg)";
             carre3.style.transform = "scale(1.2)";
             carre3.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(0.8)";
             carre2.style.transform = "scale(0.8)";
-        });
+        }});
+
         carre3.addEventListener("mouseout", function(event) {
+            if(!clicked3){ 
             carre3.style.transform = "scale(1)";
             carre3.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
             carre2.style.transform = "scale(1)";
-        })
-    };
+            cl
+        }});
+
         carre3.addEventListener("click", function(event) {
             carre3.style.width = "100%";
             carre3.style.height = "100vh";
             carre3.style.margin = "0";
             window.location.href = "#square3";
+            clicked3 = true;
         });
 
         navLinks.forEach(function(link) {
