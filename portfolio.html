@@ -338,9 +338,12 @@
         let Developpement_web = document.querySelector("#Developpement_web");
         let github_img = document.querySelector("#GitHub");
         var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
+        let clicked1 = false;
+        let clicked2 = false;
+        let clicked3 = false;
 
-        carre1.addEventListener("mouseover", function(event) {
-            document.body.style.transition = "background-color 0.5s";
+        if(!clicked1) { 
+            carre1.addEventListener("mouseover", function(event) {
             carre1.style.backgroundImage = "url(pics/back_informatique.jpg)";
             carre1.style.transform = "scale(1.2)";
             carre1.style.transition = "transform 0.3s";
@@ -348,25 +351,26 @@
             carre3.style.transform = "scale(0.8)";
         });
         carre1.addEventListener("mouseout", function(event) {
-            document.body.style.transition = "background-color 2s";
             carre1.style.transform = "scale(1)";
             carre1.style.transition = "transform 0.3s";
             carre2.style.transform = "scale(1)";
             carre3.style.transform = "scale(1)";
-        });
+        })
+        };
         carre1.addEventListener("click", function(event) {
             carre1.style.width = "100%";
-            carre1.style.height = "90vh";
+            carre1.style.height = "80vh";
             carre1.style.margin = "0";
             intro.style.display = "none";
             carre1.style.overflow = "scroll";
             CTF_box.style.display = "inline-block";
             Developpement_web.style.display = "flex";
             window.location.href = "#square1";
+            clicked1 = true;
         });
 
-        carre2.addEventListener("mouseover", function(event) {
-            document.body.style.transition = "background-color 0.5s";
+        if(!clicked2) {
+            carre2.addEventListener("mouseover", function(event) {
             carre2.style.backgroundImage = "url(pics/back_reseau.jpg)";
             carre2.style.transform = "scale(1.2)";
             carre2.style.transition = "transform 0.3s";
@@ -374,21 +378,21 @@
             carre3.style.transform = "scale(0.8)";
         });
         carre2.addEventListener("mouseout", function(event) {
-            document.body.style.transition = "background-color 2s";
             carre2.style.transform = "scale(1)";
             carre2.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
             carre3.style.transform = "scale(1)";
-        });
+        })
+        };
         carre2.addEventListener("click", function(event) {
             carre2.style.width = "100%";
             carre2.style.height = "100vh";
             carre2.style.margin = "0";
             window.location.href = "#square2";
+            clicked2 = true;
         });
 
-        carre3.addEventListener("mouseover", function(event) {
-            document.body.style.transition = "background-color 0.3s";
+        if(!clicked3){ carre3.addEventListener("mouseover", function(event) {
             carre3.style.backgroundImage = "url(pics/back_communication.jpg)";
             carre3.style.transform = "scale(1.2)";
             carre3.style.transition = "transform 0.3s";
@@ -396,12 +400,12 @@
             carre2.style.transform = "scale(0.8)";
         });
         carre3.addEventListener("mouseout", function(event) {
-            document.body.style.transition = "background-color 2s";
             carre3.style.transform = "scale(1)";
             carre3.style.transition = "transform 0.3s";
             carre1.style.transform = "scale(1)";
             carre2.style.transform = "scale(1)";
-        });
+        })
+    };
         carre3.addEventListener("click", function(event) {
             carre3.style.width = "100%";
             carre3.style.height = "100vh";
@@ -413,7 +417,7 @@
             link.addEventListener('mouseover', function() {
                 this.style.backgroundColor = 'white';
                 this.style.color = 'black';
-                this.style.borderRadius = '50%';
+                this.style.borderRadius = '10px';
             });
 
             link.addEventListener('mouseout', function() {
