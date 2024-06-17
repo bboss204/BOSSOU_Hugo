@@ -265,7 +265,7 @@
                     <a id="nav-link_2" href="parcours.html"> Parcours </a>
                 </li>
                 <li class="nav-item">
-                    <a id="nav-link_3" href="passion.html"> Passions </a>
+                    <a id="nav-link_3" href="passions.html"> Passions </a>
                 </li>
                 <li class="nav-item">
                     <a id="nav-link_4" href="projets.html"> Projets </a>
@@ -365,7 +365,7 @@
 
         carre1.addEventListener("click", function(event) {
             carre1.style.width = "100%";
-            carre1.style.height = "80vh";
+            carre1.style.height = "100vh";
             carre1.style.margin = "0";
             intro.style.display = "none";
             carre1.style.overflow = "scroll";
@@ -373,6 +373,11 @@
             Developpement_web.style.display = "flex";
             window.location.href = "#square1";
             clicked1 = true;
+            carre1.style.transform = "scale(1)";
+            carre1.style.transition = "transform 0.3s";
+            carre2.style.transform = "scale(1)";
+            carre3.style.transform = "scale(1)";
+
         });
 
         
@@ -406,6 +411,7 @@
             intro.style.display = "none";
             window.location.href = "#square2";
             clicked2 = true;
+
         });
 
         carre3.addEventListener("mouseover", function(event) {
