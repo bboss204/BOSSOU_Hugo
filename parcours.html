@@ -92,27 +92,55 @@
             }
 
             .contenaire{
-                padding: 10px 50px;
+                margin-right: 50px;
+                padding: 10px 40px;
                 position: relative;
                 background-color: #f1f1f1;
                 width: 50%;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+
+            .container::after{
+                content:'';
+                position:absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 1px;
+                top:0;
+                right: 0;
+                background-color: black;
+
             }
 
             .box{
-                padding: 20px 30px;;
+                padding: 20px 30px;
                 background-color: #fff;
                 position: relative;
                 border-radius: 10px;
                 font-size: 15px;
             }
 
-            .left-contanair{
-                left: 50%;
+            .left-container{
+                left:50%; 
+            }
+            
+            .right-container{
+                left:0;
             }
 
-            .right-contanair{
-                left:0%;
+            .timeline::before{
+                content: '';
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                background-color: #000d05;
+                width: 6px;
+                left: 50%;
+                
             }
+            
         </style>
     </head>
     <body>
@@ -136,35 +164,35 @@
             </nav>
         </header>
             <div class="timeline">
-                <div class="contenaire right-contanair">
+                <div class="contenaire right-container air">
                     <div class="box">
                         <h2>Lycée</h2>
                         <small>2019 - 2022</small>
                         <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
                     </div>
                 </div>
-                <div class="contenaire left-contanair">
+                <div class="contenaire left-container">
                     <div class="box">
                         <h2>Lycée</h2>
                         <small>2019 - 2022</small>
                         <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
                     </div>
                 </div>
-                <div class="contenaire right-contanair">
+                <div class="contenaire right-container">
                     <div class="box">
                         <h2>Lycée</h2>
                         <small>2019 - 2022</small>
                         <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
                     </div>
                 </div>
-                <div class="contenaire left-contanair">
+                <div class="contenaire left-container">
                     <div class="box">
                         <h2>Lycée</h2>
                         <small>2019 - 2022</small>
                         <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
                     </div>
                 </div>
-                <div class="contenaire right-contanair">
+                <div class="contenaire right-container">
                     <div class="box">
                         <h2>Lycée</h2>
                         <small>2019 - 2022</small>
@@ -172,8 +200,39 @@
                     </div>
                 </div>
             </div>
+            
             <footer>
                 <div id="text-end">&copy; 2023 B hugo. Tous droits réservés. </div>
             </footer>
+
+            <script>
+            var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
+
+                window.addEventListener('scroll', function() {
+                    var timeline = document.querySelector('.timeline');
+                    var timelinePosition = timeline.getBoundingClientRect().top;
+                    var windowHeight = window.innerHeight;
+
+                    if (timelinePosition < windowHeight) {
+                        timeline.classList.add('show');
+                    } else {
+                        timeline.classList.remove('show');
+                    }
+                });
+
+                navLinks.forEach(function(link) {
+                link.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = 'white';
+                    this.style.color = 'black';
+                    this.style.borderRadius = '10px';
+                });
+
+                link.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                    this.style.borderRadius = '50%';
+                });
+                });
+            </script>
     </body>
 </html>
