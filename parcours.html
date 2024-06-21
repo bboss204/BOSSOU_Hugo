@@ -1,95 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page parcours</title>
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="icon" type="image/png" href="icons/montain.png"/>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
-        <style>
-            body{
-                background-image: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.8) 100%);
-                margin: 0;
-                padding: 0;
-                font-family: 'Nunito', sans-serif;
-                height: auto;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page parcours</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="icons/montain.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+            background-image: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.8) 100%);
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            height: auto;
+        }
 
-            header{
-                background-color: #001a0c;
-                padding: 20px;
-            }
+        header {
+            background-color: #001a0c;
+            padding: 20px;
+        }
 
-            footer{
-                background-color: #000d05;
-                bottom: 0;
-                position: fixed;
-                width: 100%;
-            }
+        footer {
+            background-color: #000d05;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+        }
 
-            h1 {
-                text-align: center;
-                color: #fff;
-                margin: 0;
-            }
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin: 0;
+        }
 
-            .btn-group {
-                display: flex;
-            }
+        .btn-group {
+            display: flex;
+        }
 
-            .nav {
-                display: flex;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                justify-content: center;
-            }
+        .nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            justify-content: center;
+        }
 
-            .nav-item {
-                display: inline;
-                padding: 1%;
-               text-align: center; 
-            }
+        .nav-item {
+            display: inline;
+            padding: 1%;
+            text-align: center; 
+        }
 
-            #nav-link_1{
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 8px;
-            }
+        #nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4 {
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 8px;
+        }
 
-            #nav-link_2{
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 8px;
-            }
-
-            #nav-link_3{
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 8px;
-            }
-
-            #nav-link_4{
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 8px;
-            }
-
-            .timeline {
+        .timeline {
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
-            }   
+        }   
 
         .timeline::after {
             content: '';
@@ -103,18 +79,13 @@
         }
 
         .timeline-event {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
             position: relative;
-            width: 45%;
+            width: 100%;
             padding: 20px;
             box-sizing: border-box;
-        }
-
-        .right-container {
-            left: 55%;
-        }
-
-        .left-container {
-            left: 0;
         }
 
         .event-box {
@@ -125,120 +96,100 @@
             margin-bottom: 20px;
         }
 
-        .right-container::before, .left-container::before {
+        .event-box::before {
             content: '';
             position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
+            width: 20px;
+            height: 20px;
+            background-color: #bdbdbd;
+            border-radius: 50%;
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%);
         }
 
-        .right-container::before {
-            top: 22px;
-            right: 100%;
-            border-width: 10px 20px 10px 0;
-            border-color: transparent #fff transparent transparent;
-        }
-
-        .left-container::before {
-            top: 22px;
-            left: 100%;
-            border-width: 10px 0 10px 20px;
-            border-color: transparent transparent transparent #fff;
+        .event-box:last-child::before {
+            display: none;
         }
             
     </style>
-    </head>
-    <body>
-        <header>
-            <h1>hugo B</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a id="nav-link_1" href="index.html"> Accueill </a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="nav-link_2" href="portfolio.html"> Portfolio </a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="nav-link_3" href="passions.html"> Passions </a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="nav-link_4" href="projets.html"> Projets </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-            <div class="timeline">
-                <div class="contenaire right-container air">
-                    <div class="box">
-                        <h2>Lycée</h2>
-                        <small>2019 - 2022</small>
-                        <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
-                    </div>
-                </div>
-                <div class="contenaire left-container">
-                    <div class="box">
-                        <h2>Lycée</h2>
-                        <small>2019 - 2022</small>
-                        <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
-                    </div>
-                </div>
-                <div class="contenaire right-container">
-                    <div class="box">
-                        <h2>Lycée</h2>
-                        <small>2019 - 2022</small>
-                        <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
-                    </div>
-                </div>
-                <div class="contenaire left-container">
-                    <div class="box">
-                        <h2>Lycée</h2>
-                        <small>2019 - 2022</small>
-                        <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
-                    </div>
-                </div>
-                <div class="contenaire right-container">
-                    <div class="box">
-                        <h2>Lycée</h2>
-                        <small>2019 - 2022</small>
-                        <p>je fut en formation a l'ecole pierre gile de gennes pendant 3ans afin d'obternir mon bac nsi math physique.</p>
-                    </div>
-                </div>
+</head>
+<body>
+    <header>
+        <h1>hugo B</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a id="nav-link_1" href="index.html"> Accueil </a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-link_2" href="portfolio.html"> Portfolio </a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-link_3" href="passions.html"> Passions </a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-link_4" href="portfolio.html"> Portfolio </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="timeline">
+        <div class="timeline-event">
+            <div class="event-box">
+                <h2>Lycée</h2>
+                <small>2019 - 2022</small>
+                <p>Je fus en formation à l'école Pierre Gilles de Gennes pendant 3 ans afin d'obtenir mon bac NSI math physique.</p>
             </div>
-            
-            <footer>
-                <div id="text-end">&copy; 2023 B hugo. Tous droits réservés. </div>
-            </footer>
+        </div>
+        <div class="timeline-event">
+            <div class="event-box">
+                <h2>Université</h2>
+                <small>2022 - Present</small>
+                <p>Je suis actuellement étudiant en informatique à l'université.</p>
+            </div>
+        </div>
+        <div class="timeline-event">
+            <div class="event-box">
+                <h2>Stage</h2>
+                <small>2023</small>
+                <p>J'ai effectué un stage en développement web chez une entreprise pendant 3 mois.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div id="text-end">&copy; 2023 B hugo. Tous droits réservés. </div>
+    </footer>
 
-            <script>
-            var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
+    <script>
+        var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
 
-                window.addEventListener('scroll', function() {
-                    var timeline = document.querySelector('.timeline');
-                    var timelinePosition = timeline.getBoundingClientRect().top;
-                    var windowHeight = window.innerHeight;
+        window.addEventListener('scroll', function() {
+            var timeline = document.querySelector('.timeline');
+            var timelinePosition = timeline.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
 
-                    if (timelinePosition < windowHeight) {
-                        timeline.classList.add('show');
-                    } else {
-                        timeline.classList.remove('show');
-                    }
-                });
+            if (timelinePosition < windowHeight) {
+                timeline.classList.add('show');
+            } else {
+                timeline.classList.remove('show');
+            }
+        });
 
-                navLinks.forEach(function(link) {
-                link.addEventListener('mouseover', function() {
-                    this.style.backgroundColor = 'white';
-                    this.style.color = 'black';
-                    this.style.borderRadius = '10px';
-                });
+        navLinks.forEach(function(link) {
+            link.addEventListener('mouseover', function() {
+                this.style.backgroundColor = 'white';
+                this.style.color = 'black';
+                this.style.borderRadius = '10px';
+            });
 
-                link.addEventListener('mouseout', function() {
-                    this.style.backgroundColor = '';
-                    this.style.color = '';
-                    this.style.borderRadius = '50%';
-                });
-                });
-            </script>
-    </body>
+            link.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '';
+                this.style.color = '';
+                this.style.borderRadius = '50%';
+            });
+        });
+    </script>
+</body>
 </html>
