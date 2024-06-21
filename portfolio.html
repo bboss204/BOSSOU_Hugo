@@ -261,6 +261,30 @@
                 margin-left: 1%;
             }
 
+            #Anglais {
+                width: 30%;
+                height: 50%;
+                background-image: url(pics/back_portfolio_black.jpg);
+                border-radius: 10px;
+                display: none;
+                margin-bottom: 1%;
+                flex-direction: column;
+                margin: 0;
+                margin-left: 1%;
+            }
+
+            #Fon {
+                width: 30%;
+                height: 50%;
+                background-image: url(pics/back_portfolio_black.jpg);
+                border-radius: 10px;
+                display: none;
+                margin-bottom: 1%;
+                flex-direction: column;
+                margin: 0;
+                margin-left: 1%;
+            }
+
             #square2 {
                 text-align: center;
             }
@@ -344,6 +368,7 @@
                         j'ai appris à concevoir et à mettre en place des réseaux d'entreprise.
                         J'ai également appris à configurer des routeurs et des switchs, à mettre en place des VLANs, à configurer des serveurs DHCP et DNS,
                         et à sécuriser des réseaux. J'ai également appris à configurer des réseaux sans fil et à les sécuriser.
+                        ci dessous un projet que j'ai realise en binome sur la creation d'un reseau d'entreprise sur cisco packet tracer.
                     </p>
                 </div>
                 <a id="thmscript" href="https://tryhackme.com/p/xmiu">
@@ -356,6 +381,27 @@
                 <h2 class="texte_square3">Communication</h2>
             </div>
             <div id="Anglais">
+                <div class="en-tete_block">
+                    <p>
+                        je pratique enormeement l'anglais et je l'inclus dans mon qotidient car j'hestime qu'il est un atout majeur dans le monde du travail. notament dans l'informatique les cours que je prend en autodidacte sont pour la major patrie j'ai fais une classe euro au lycee ou j'avais des cours d'histoire en anglais et plus d'heure de pratique a la fin de cette anne de terminale j'ai passe un certificat cambridge de niveau b2. 
+                        
+                    </p>
+                </div>
+                <a id="thmscript" href="https://tryhackme.com/p/xmiu">
+                    
+                </a>
+            </div>
+            <div id="Fon">
+                <div class="en-tete_block">
+                    <p>
+                        Le fon est une langue du benin qui est ma langue paternelle avec lequel je suis en contact depuis mon enfance mon defi est de l'apprendre parfaitement pour cela je vais au besnin tout les deux 3 ans pour y voir ma famille et apprendre plus sur ma seconde cultiure en apprenant ma langue.
+                        
+                    </p>
+                </div>
+                <a id="thmscript" href="https://tryhackme.com/p/xmiu">
+                    
+                </a>
+
             </div>
         </div>
     </div>
@@ -372,7 +418,9 @@
         let Developpement_web = document.querySelector("#Developpement_web");
         let github_img = document.querySelector("#GitHub");
         let navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
-                                                                                                                                                                                                                                                                                                                                                                   
+        let crea_res = document.querySelector("#création_reseaux");  
+        let Anglais = document.querySelector("#Anglais");
+        let Fon = document.querySelector("#Fon");                                                                                                                                                                                                                                                                                                                                         
         var clicked1 = false;
         var clicked2 = false;
         var clicked3 = false;
@@ -446,6 +494,7 @@
             carre2.style.margin = "0";
             intro.style.display = "none";
             window.location.href = "#square2";
+            crea_res.style.display = "inline-block";
             clicked2 = true;
 
         });
@@ -481,6 +530,8 @@
             carre3.style.margin = "0";
             intro.style.display = "none";
             window.location.href = "#square3";
+            Anglais.style.display = "inline-block";
+            Fon.style.display = "inline-block";
             clicked3 = true;
         });
 
