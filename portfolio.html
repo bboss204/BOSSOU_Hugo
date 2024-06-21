@@ -248,6 +248,19 @@
             50%  {box-shadow: 0 0 10px #afb5dc;}
             100% {box-shadow: 0 0 10px #493ba7;}
             }
+
+            #création_reseaux {
+                width: 30%;
+                height: 50%;
+                background-image: url(pics/back_portfolio_black.jpg);
+                border-radius: 10px;
+                display: none;
+                margin-bottom: 1%;
+                flex-direction: column;
+                margin: 0;
+                margin-left: 1%;
+            }
+
             #square2 {
                 text-align: center;
             }
@@ -324,7 +337,18 @@
             <div class="title_square">
                 <h2 class="texte_square2"> Réseau </h2>
             </div>
-            <div id="equipement_actif">
+            <div id="création_reseaux">
+                <div class="en-tete_block">
+                    <p>
+                        Dans le cadre de ma formation en BUT Réseau Télécommunication,
+                        j'ai appris à concevoir et à mettre en place des réseaux d'entreprise.
+                        J'ai également appris à configurer des routeurs et des switchs, à mettre en place des VLANs, à configurer des serveurs DHCP et DNS,
+                        et à sécuriser des réseaux. J'ai également appris à configurer des réseaux sans fil et à les sécuriser.
+                    </p>
+                </div>
+                <a id="thmscript" href="https://tryhackme.com/p/xmiu">
+                    <script src="https://tryhackme.com/badge/607087"></script>
+                </a>
             </div>
         </div>
         <div href="#square3" class="square" id="square3">
@@ -347,7 +371,8 @@
         let conteneur_info = document.querySelector("#conteneur_info");
         let Developpement_web = document.querySelector("#Developpement_web");
         let github_img = document.querySelector("#GitHub");
-        let navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');                                                                                                                                                                                                                                                                                                                                                           
+        let navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
+                                                                                                                                                                                                                                                                                                                                                                   
         var clicked1 = false;
         var clicked2 = false;
         var clicked3 = false;
