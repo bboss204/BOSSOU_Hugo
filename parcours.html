@@ -85,63 +85,69 @@
                 padding: 8px;
             }
 
-            .timeline{
-                position: relative;
-                max-width: 1200px;
-                margin: 100px auto;
-            }
+            .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            }   
 
-            .contenaire{
-                margin-right: 50px;
-                padding: 10px 40px;
-                position: relative;
-                background-color: #f1f1f1;
-                width: 50%;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #bdbdbd;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-            .container::after{
-                content:'';
-                position:absolute;
-                width: 20px;
-                height: 20px;
-                border-radius: 1px;
-                top:0;
-                right: 0;
-                background-color: black;
+        .timeline-event {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-            }
+        .right-container {
+            left: 55%;
+        }
 
-            .box{
-                padding: 20px 30px;
-                background-color: #fff;
-                position: relative;
-                border-radius: 10px;
-                font-size: 15px;
-            }
+        .left-container {
+            left: 0;
+        }
 
-            .left-container{
-                left:50%; 
-            }
+        .event-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+            margin-bottom: 20px;
+        }
+
+        .right-container::before, .left-container::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .right-container::before {
+            top: 22px;
+            right: 100%;
+            border-width: 10px 20px 10px 0;
+            border-color: transparent #fff transparent transparent;
+        }
+
+        .left-container::before {
+            top: 22px;
+            left: 100%;
+            border-width: 10px 0 10px 20px;
+            border-color: transparent transparent transparent #fff;
+        }
             
-            .right-container{
-                left:0;
-            }
-
-            .timeline::before{
-                content: '';
-                top: 0;
-                bottom: 0;
-                position: absolute;
-                background-color: #000d05;
-                width: 6px;
-                left: 50%;
-                
-            }
-            
-        </style>
+    </style>
     </head>
     <body>
         <header>
