@@ -323,6 +323,9 @@
         <div class="square" id="square2">
             <div class="title_square">
                 <h2 class="texte_square2"> Réseau </h2>
+                <div id="">
+
+                </div>
             </div>
             <div id="equipement_actif">
             </div>
@@ -347,7 +350,7 @@
         let conteneur_info = document.querySelector("#conteneur_info");
         let Developpement_web = document.querySelector("#Developpement_web");
         let github_img = document.querySelector("#GitHub");
-        var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
+
         var clicked1 = false;
         var clicked2 = false;
         var clicked3 = false;
@@ -404,6 +407,7 @@
                 carre3.style.transform = "scale(0.8)";
             }
         }});
+
         carre2.addEventListener("mouseout", function(event) {
             if(!clicked2) {
             carre2.style.transform = "scale(1)";
@@ -415,6 +419,7 @@
                 carre3.style.transform = "scale(1)";
             }
         }});
+
         carre2.addEventListener("click", function(event) {
             carre2.style.width = "100%";
             carre2.style.height = "100vh";
