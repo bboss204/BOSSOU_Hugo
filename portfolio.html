@@ -415,133 +415,75 @@
         <div id="text-end">&copy; 2023 B hugo. Tous droits réservés. </div>
     </footer>
     <script>
-        let carre1 = document.querySelector("#square1");
-        let carre2 = document.querySelector("#square2");
-        let carre3 = document.querySelector("#square3");
-        let CTF_box = document.querySelector("#CTF_box");
-        let intro = document.querySelector(".introp");
-        let conteneur_info = document.querySelector("#conteneur_info");
-        let Developpement_web = document.querySelector("#Developpement_web");
-        let github_img = document.querySelector("#GitHub");
-        let navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
-        let crea_res = document.querySelector("#création_reseaux");  
-        let Anglais = document.querySelector("#Anglais");
-        let Fon = document.querySelector("#Fon");                                                                                                                                                                                                                                                                                                                                         
-        var clicked1 = false;
-        var clicked2 = false;
-        var clicked3 = false;
+        document.addEventListener("DOMContentLoaded", function() {
+        const squares = document.querySelectorAll(".square");
+        const intro = document.querySelector(".introp");
+        const CTF_box = document.querySelector("#CTF_box");
+        const conteneur_info = document.querySelector("#conteneur_info");
+        const Developpement_web = document.querySelector("#Developpement_web");
+        const crea_res = document.querySelector("#création_reseaux");  
+        const Anglais = document.querySelector("#Anglais");
+        const Fon = document.querySelector("#Fon");
+        const navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
 
-        carre1.addEventListener("mouseover", function(event) {
-            if(!clicked1) { 
-            carre1.style.backgroundImage = "url(pics/back_informatique.jpg)";
-            carre1.style.transform = "scale(1.2)";
-            carre1.style.transition = "transform 0.3s";
-            if(!clicked2) {
-                carre2.style.transform = "scale(0.8)";
-            }
-            if(!clicked3) {
-                carre3.style.transform = "scale(0.8)";
-            }
-        }});
+        let clicked = [false, false, false];
 
-        carre1.addEventListener("mouseout", function(event) {
-            if(!clicked1) { 
-            carre1.style.transform = "scale(1)";
-            carre1.style.transition = "transform 0.3s";
-            carre2.style.transform = "scale(1)";
-            carre3.style.transform = "scale(1)";
-        }});
+        squares.forEach((square, index) => {
+            const bgImages = ["url(pics/back_informatique.jpg)", "url(pics/back_reseau.jpg)", "url(pics/back_communication.jpg)"];
 
-        carre1.addEventListener("click", function(event) {
-            carre1.style.width = "100%";
-            carre1.style.height = "100vh";
-            carre1.style.margin = "0";
-            intro.style.display = "none";
-            carre1.style.overflow = "scroll";
-            CTF_box.style.display = "inline-block";
-            conteneur_info.style.display = "flex";
-            Developpement_web.style.display = "flex";
-            window.location.href = "#square1";
-            clicked1 = true;
-            carre1.style.transform = "scale(1)";
-            carre1.style.transition = "transform 0.3s";
-            carre2.style.transform = "scale(1)";
-            carre3.style.transform = "scale(1)";
+            square.addEventListener("mouseover", function() {
+                if (!clicked[index]) {
+                    this.style.backgroundImage = bgImages[index];
+                    this.style.transform = "scale(1.2)";
+                    this.style.transition = "transform 0.3s";
+                    squares.forEach((s, i) => {
+                        if (i !== index && !clicked[i]) {
+                            s.style.transform = "scale(0.8)";
+                        }
+                    });
+                }
+            });
 
+            square.addEventListener("mouseout", function() {
+                if (!clicked[index]) {
+                    this.style.transform = "scale(1)";
+                    this.style.transition = "transform 0.3s";
+                    squares.forEach((s, i) => {
+                        if (!clicked[i]) {
+                            s.style.transform = "scale(1)";
+                        }
+                    });
+                }
+            });
+
+            square.addEventListener("click", function() {
+                this.style.width = "100%";
+                this.style.height = "100vh";
+                this.style.margin = "0";
+                intro.style.display = "none";
+                this.style.overflow = "scroll";
+                window.location.href = `#square${index + 1}`;
+                clicked[index] = true;
+
+                if (index === 0) {
+                    CTF_box.style.display = "inline-block";
+                    conteneur_info.style.display = "flex";
+                    Developpement_web.style.display = "flex";
+                } else if (index === 1) {
+                    crea_res.style.display = "inline-block";
+                } else if (index === 2) {
+                    Anglais.style.display = "inline-block";
+                    Fon.style.display = "inline-block";
+                }
+
+                squares.forEach((s, i) => {
+                    s.style.transform = "scale(1)";
+                    s.style.transition = "transform 0.3s";
+                });
+            });
         });
 
-        
-        carre2.addEventListener("mouseover", function(event) {
-            if(!clicked2) {
-            carre2.style.backgroundImage = "url(pics/back_reseau.jpg)";
-            carre2.style.transform = "scale(1.2)";
-            carre2.style.transition = "transform 0.3s";
-            if(!clicked1) {
-                carre1.style.transform = "scale(0.8)";
-            }
-            if(!clicked3) {
-                carre3.style.transform = "scale(0.8)";
-            }
-        }});
-        carre2.addEventListener("mouseout", function(event) {
-            if(!clicked2) {
-            carre2.style.transform = "scale(1)";
-            carre2.style.transition = "transform 0.3s";
-            if(!clicked1) {
-                carre1.style.transform = "scale(1)";
-            }
-            if(!clicked3) {
-                carre3.style.transform = "scale(1)";
-            }
-        }});
-        carre2.addEventListener("click", function(event) {
-            carre2.style.width = "100%";
-            carre2.style.height = "100vh";
-            carre2.style.margin = "0";
-            intro.style.display = "none";
-            window.location.href = "#square2";
-            crea_res.style.display = "inline-block";
-            clicked2 = true;
-
-        });
-
-        carre3.addEventListener("mouseover", function(event) {
-            if(!clicked3){ 
-            carre3.style.backgroundImage = "url(pics/back_communication.jpg)";
-            carre3.style.transform = "scale(1.2)";
-            carre3.style.transition = "transform 0.3s";
-            if(!clicked2) {
-                carre2.style.transform = "scale(0.8)";
-            }
-            if(!clicked1) {
-                carre1.style.transform = "scale(0.8)";
-            }
-        }});
-
-        carre3.addEventListener("mouseout", function(event) {
-            if(!clicked3){ 
-            carre3.style.transform = "scale(1)";
-            carre3.style.transition = "transform 0.3s";
-            if(!clicked2) {
-                carre2.style.transform = "scale(1)";
-            }
-            if(!clicked1) {
-            carre1.style.transform = "scale(1)";
-            }
-        }});
-
-        carre3.addEventListener("click", function(event) {
-            carre3.style.width = "100%";
-            carre3.style.height = "100vh";
-            carre3.style.margin = "0";
-            intro.style.display = "none";
-            window.location.href = "#square3";
-            Anglais.style.display = "inline-block";
-            Fon.style.display = "inline-block";
-            clicked3 = true;
-        });
-
-        navLinks.forEach(function(link) {
+        navLinks.forEach(link => {
             link.addEventListener('mouseover', function() {
                 this.style.backgroundColor = 'white';
                 this.style.color = 'black';
@@ -554,7 +496,7 @@
                 this.style.borderRadius = '50%';
             });
         });
-
+    });
         </script>
     </div>
     </body>
