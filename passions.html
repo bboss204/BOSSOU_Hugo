@@ -3,115 +3,129 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page passions</title>
+        <title>Page Passions</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="icons/montain.png"/>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
         <style>
-            body{
-                background-image: url(pics/backpageAcceuil.jpg);
-                height: 1000px;
+            body {
+                background-image: url('pics/backpageAcceuil.jpg');
+                background-size: cover;
+                background-attachment: fixed;
                 margin: 0;
                 padding: 0;
                 font-family: 'Nunito', sans-serif;
-                background-attachment: fixed;
+                color: #fff;
+                text-align: center;
             }
 
-            header{
-                background-color: #001a0c;
+            header {
+                background-color: rgba(0, 26, 12);
                 padding: 20px;
-            }
-
-            footer{
-                background-color: #000d05;
-                bottom: 0;
                 position: fixed;
                 width: 100%;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            footer {
+                background-color: rgba(0, 13, 5, 0.9);
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+                padding: 10px 0;
+                color: #fff;
             }
 
             h1 {
-                text-align: center;
-                color: #fff;
                 margin: 0;
             }
 
-            p{
-                text-align: center;
-                color: #fff;
+            .bienvenue {
+                padding: 100px 20px 20px;
             }
 
-            .bienvenue{
-                text-align: center;
-                color: #fff;
-            }
-
-            .text_droite{
-                text-align: center;
-                border-radius: 100px;
-                margin-top: 5% ;
-                background-image: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.9) 100%);
-                width: 50%;
-                margin: auto;
-                margin-top: 5%;
-                text-emphasis: bold;
-            }
-
-            .logos{
-                position: fixed;
-                bottom: 15px;
-                left: 10px;
+            .photo-layout {
                 display: flex;
+                justify-content: center;
                 align-items: center;
+                margin: 20px 0;
+                padding: 20px;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 15px;
+                transition: transform 0.3s;
             }
 
-            .btn-group {
-                display: flex;
+            .photo {
+                flex: 1;
+                margin-right: 20px;
             }
+
+            .image {
+                width: 100%;
+                max-width: 300px;
+                border: 2px dotted yellowgreen;
+                border-radius: 10px;
+            }
+
+            .text {
+                flex: 2;
+                background: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.9) 100%);
+                border-radius: 15px;
+                padding: 20px;
+                color: #fff;
+            }
+
             .nav {
-                display: flex;
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
-                overflow: hidden;
+                display: flex;
                 justify-content: center;
             }
 
             .nav-item {
-                display: inline;
-                padding: 1%;
-               text-align: center; 
+                margin: 0 10px;
             }
 
-            #nav-link_1{
-                display: block;
+            .nav-item a {
                 color: white;
                 text-decoration: none;
-                text-align: center;
-                padding: 8px;
+                padding: 10px 20px;
+                border-radius: 50px;
+                transition: background-color 0.3s, color 0.3s;
             }
 
-            #nav-link_2{
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 8px;
+            .nav-item a:hover {
+                background-color: white;
+                color: black;
             }
 
-            #nav-link_3{
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 8px;
+            @media (max-width: 768px) {
+                .photo-layout {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .photo {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+
+                .image {
+                    max-width: 100%;
+                }
             }
 
-            #nav-link_4{
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 8px;
+            .photo-layout:nth-child(even) .photo {
+                order: 2;
+                margin-right: 0;
+                margin-left: 20px;
+            }
+
+            .photo-layout:nth-child(even) .text {
+                order: 1;
             }
         </style>
     </head>
@@ -121,42 +135,83 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a id="nav-link_1" href="index.html"> Accueil </a>
+                        <a href="index.html">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link_4" href="portfolio.html"> Portfolio </a>
+                        <a href="portfolio.html">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link_2" href="parcours.html"> Parcours </a>
+                        <a href="parcours.html">Parcours</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link_3" href="passions.html"> Passions </a>
+                        <a href="passions.html">Passions</a>
                     </li>
                 </ul>
             </nav>
         </header>
+        <div class="bienvenue">
+            <h2>Bienvenue sur ma page passions</h2>
+            <p>Vous trouverez ici mes passions et mes loisirs.</p>
+        </div>
+        <div class="photo-layout">
+            <div class="photo">
+                <img class="image" src="pics/octogoneMMA.jpeg" alt="octogone de MMA">
+            </div>
+            <div class="text">
+                <h3>Le MMA</h3>
+                <p>Je pratique le pancrace depuis 2019, une discipline qui combine les techniques de lutte et de boxe, et j'ai également passé un an à me former au jiu-jitsu brésilien (JJB). Mon objectif est de commencer à pratiquer le MMA l'année prochaine. En attendant, je regarde beaucoup de combats, fasciné par la stratégie, la technique et l'intensité de ce sport. Le MMA est pour moi une passion qui exige discipline, persévérance et un fort mental, et je suis impatient de continuer à progresser dans cette voie.</p>
+            </div>
+        </div>
+
+        <div class="photo-layout">
+            <div class="photo">
+                <img class="image" src="pics/montagne04.jpg" alt="Montagne">
+            </div>
+            <div class="text">
+                <h3>La Montagne</h3>
+                <p>Né à 600 mètres d'altitude dans une ville de Provence, j'ai toujours été entouré par les montagnes. J'adore randonner, profitant du calme et des paysages magnifiques qu'offrent les hauteurs. La montagne est un lieu de ressourcement pour moi, un espace où je peux me connecter avec la nature et trouver la paix intérieure. Que ce soit en été ou en hiver, chaque randonnée est une nouvelle aventure, me permettant de découvrir des panoramas époustouflants et de tester mes limites physiques.</p>
+            </div>
+        </div>
+
+        <div class="photo-layout">
+            <div class="photo">
+                <img class="image" src="pics/tronebehanzin.jpg" alt="Trône de Béhanzin">
+            </div>
+            <div class="text">
+                <h3>L'Histoire du Bénin</h3>
+                <p>L'histoire de l'Afrique, et plus particulièrement celle du Bénin, mon pays d'origine, me passionne. Le Bénin possède une histoire riche, marquée par le puissant royaume de Dahomey, célèbre pour ses amazones et son influence dans la région. Étudier cette histoire me permet de mieux comprendre nos racines, notre culture et les défis contemporains. Cette passion nourrit mon identité et mon désir de voir le patrimoine africain reconnu et célébré à sa juste valeur.</p>
+            </div>
+        </div>
+
+        <div class="photo-layout">
+            <div class="photo">
+                <img class="image" src="pics/livres.jpg" alt="Livres">
+            </div>
+            <div class="text">
+                <h3>Les livres</h3>
+                <p>La lecture est une de mes passions, et je suis particulièrement attiré par les œuvres de Stephen King, Colson Whitehead, Aimé Césaire et Cheikh Anta Diop. Stephen King, avec ses histoires captivantes et ses personnages profonds, m'entraîne dans des mondes imaginaires fascinants. Colson Whitehead explore les réalités sociales et historiques avec une profondeur touchante. Aimé Césaire, à travers sa poésie et ses essais, exprime la fierté de l'identité noire et dénonce les injustices. Cheikh Anta Diop, historien et anthropologue, offre une perspective révolutionnaire sur l'histoire africaine. Ces auteurs enrichissent mon esprit et alimentent ma passion pour la littérature et la compréhension du monde.</p>
+            </div>
+        </div>
 
         <footer>
-            <div id="text-end">&copy; 2023 B hugo. Tous droits réservés. </div>
+            <div>&copy; 2023 B Hugo. Tous droits réservés.</div>
         </footer>
 
         <script>
-         var navLinks = document.querySelectorAll('#nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4');
+            var navLinks = document.querySelectorAll('.nav-item a');
 
-        navLinks.forEach(function(link) {
-            link.addEventListener('mouseover', function() {
-                this.style.backgroundColor = 'white';
-                this.style.color = 'black';
-                this.style.borderRadius = '10px';
-            });
+            navLinks.forEach(function(link) {
+                link.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = 'white';
+                    this.style.color = 'black';
+                    this.style.borderRadius = '10px';
+                });
 
-            link.addEventListener('mouseout', function() {
-                this.style.backgroundColor = '';
-                this.style.color = '';
-                this.style.borderRadius = '50%';
+                link.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                });
             });
-            });   
         </script>
-
     </body>
 </html>
