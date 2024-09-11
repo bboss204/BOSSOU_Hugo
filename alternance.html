@@ -5,51 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage chez Equans</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('pics/backpageAcceuil.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background-color: #001a0c;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: rgba(0, 13, 5, 0.9);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .bienvenue {
+            padding: 100px 20px 20px;
+        }
+
+        .photo-layout {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .photo {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .image {
+            width: 100%;
+            max-width: 300px;
+            border: 2px dotted yellowgreen;
+            border-radius: 10px;
+        }
+
+        .text {
+            flex: 2;
+            background: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.9) 100%);
+            border-radius: 15px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-item {
+            margin: 0 10px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-item a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .photo-layout {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .photo {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .image {
+                max-width: 100%;
+            }
+        }
+
+        .photo-layout:nth-child(even) .photo {
+            order: 2;
+            margin-right: 0;
+            margin-left: 20px;
+        }
+
+        .photo-layout:nth-child(even) .text {
+            order: 1;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Mon Stage chez Equans</h1>
+        <br>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a id="nav-link_1" href="index.html"> Accueil </a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-link_4" href="portfolio.html"> Portfolio </a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-link_2" href="parcours.html"> Parcours </a>
+                </li>
+                <li class="nav-item">
+                    <a id="nav-link_3" href="passions.html"> Passions </a>
+                </li>
+                <li class="nav-item"></li>
+                    <a id="nav-link_3" href="alternance.html"> alternance </a>
+                </li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <ul class="nav">
-            <li class="nav-item">
-                <a id="nav-link_1" href="index.html"> Accueil </a>
-            </li>
-            <li class="nav-item">
-                <a id="nav-link_4" href="portfolio.html"> Portfolio </a>
-            </li>
-            <li class="nav-item">
-                <a id="nav-link_2" href="parcours.html"> Parcours </a>
-            </li>
-            <li class="nav-item">
-                <a id="nav-link_3" href="passions.html"> Passions </a>
-            </li>
-            <li class="nav-item"></li>
-                <a id="nav-link_3" href="alternance.html"> alternance </a>
-            </li>
-        </ul>
-    </nav>
-
+    <br>
     <main>
         <section>
-            <h2>About Equans</h2>
-            <p>Write about Equans and what they do.</p>
+            <h2>Equans c'est quoi?</h2>
+            <p>liorem ispeum</p>
         </section>
 
         <section>
-            <h2>My Internship Experience</h2>
-            <p>Write about your internship experience at Equans, including the projects you worked on, the skills you gained, and any notable achievements.</p>
+            <h2>Mon experience en tant qu'alternant</h2>
+            <p>liorem ipseum</p>
         </section>
 
-        <section>
-            <h2>Why I Chose Equans</h2>
-            <p>Explain why you chose to do your internship at Equans and what attracted you to the company.</p>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2022 Your Name</p>
+        <p>&copy; 2024 BOSSOU hugo</p>
     </footer>
 </body>
 </html>
