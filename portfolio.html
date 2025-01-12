@@ -49,33 +49,36 @@
             }
             footer{
                 background-color: rgba(0, 24, 9, 0.9);
-                bottom: 0;
                 position: fixed;
                 width: 100%;
+                bottom: 0;
+                padding: 10px 0;
+                text-align: center;
             }
 
             .nav {
+                display: flex;
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
-                text-align: center;
-                color: white;
+                justify-content: center;
             }
 
             .nav-item {
-                display: inline-block;
-                text-align: center;
+                display: inline;
                 padding: 1%;
+                text-align: center;
             }
 
-            .nav-link {
-                display: inline-block;
+            .nav-link, #nav-link_1, #nav-link_2, #nav-link_3, #nav-link_4, #nav-link_5 {
+                display: block;
                 color: white;
-                text-align: center;
-                padding: 14px 16px;
                 text-decoration: none;
+                text-align: center;
+                padding: 8px;
             }
+
             .introp {
                 text-align: center;
                 color: white;
@@ -95,6 +98,7 @@
                 height: 90vh; 
                 margin: 0;
                 overflow: scroll;
+                padding-bottom: 60px;
             }
             .square {
                 width: 30%;
