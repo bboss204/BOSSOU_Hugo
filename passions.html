@@ -39,41 +39,6 @@
                 margin: 0;
             }
 
-            .bienvenue {
-                padding: 100px 20px 20px;
-            }
-
-            .photo-layout {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 20px 0;
-                padding: 20px;
-                background: rgba(0, 0, 0, 0.2);
-                border-radius: 15px;
-                transition: transform 0.3s;
-            }
-
-            .photo {
-                flex: 1;
-                margin-right: 20px;
-            }
-
-            .image {
-                width: 100%;
-                max-width: 300px;
-                border: 2px dotted yellowgreen;
-                border-radius: 10px;
-            }
-
-            .text {
-                flex: 2;
-                background: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.9) 100%);
-                border-radius: 15px;
-                padding: 20px;
-                color: #fff;
-            }
-
             .nav {
                 list-style-type: none;
                 margin: 0;
@@ -124,6 +89,142 @@
             .photo-layout:nth-child(even) .text {
                 order: 1;
             }
+
+            .passion-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            .intro-section {
+                padding: 30px 20px;  /* Réduit le padding vertical */
+                text-align: center;
+                margin-bottom: 30px;  /* Réduit la marge du bas */
+                background: rgba(0, 24, 9, 0.9);
+                border-radius: 15px;  /* Réduit légèrement le border-radius */
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+                max-width: 800px;    /* Limite la largeur maximale */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .intro-section h2 {
+                font-size: 2em;      /* Réduit la taille du titre */
+                margin-bottom: 10px; /* Réduit l'espace sous le titre */
+            }
+
+            .intro-section p {
+                font-size: 1.1em;    /* Réduit légèrement la taille du texte */
+                margin: 0;           /* Supprime les marges par défaut */
+                opacity: 0.9;
+            }
+
+            .passion-card {
+                display: flex;
+                gap: 40px;
+                margin-bottom: 40px;
+                padding: 30px;
+                background: rgba(0, 24, 9, 0.85); /* Plus opaque et plus sombre */
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            .passion-card.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .passion-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .passion-image {
+                flex: 1;
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                min-height: 300px;
+            }
+
+            .passion-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            .passion-card:hover .passion-image img {
+                transform: scale(1.1);
+            }
+
+            .passion-content {
+                flex: 2;
+                padding: 25px;
+                background: rgba(0, 24, 9, 0.9); /* Fond plus opaque pour le texte */
+                border-radius: 15px;
+            }
+
+            .passion-title {
+                font-size: 2em;
+                color: #fff;
+                margin-bottom: 20px;
+                position: relative;
+            }
+
+            .passion-title::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(90deg, #1675F2, transparent);
+                border-radius: 2px;
+            }
+
+            .passion-text {
+                color: #fff;
+                line-height: 1.8;
+                font-size: 1.1em;
+                text-align: justify;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @media (max-width: 768px) {
+                .passion-card {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                .passion-image {
+                    min-height: 200px;
+                }
+
+                .intro-section {
+                    padding: 20px;
+                    margin: 15px;
+                }
+                
+                .intro-section h2 {
+                    font-size: 1.8em;
+                }
+        
+                .intro-section p {
+                    font-size: 1em;
+                }
+            }
         </style>
     </head>
     <body>
@@ -149,47 +250,58 @@
                 </ul>
             </nav>
         </header>
-        <div class="bienvenue">
-            <h2>Bienvenue sur ma page passions</h2>
-            <p>Vous trouverez ici mes passions et mes loisirs.</p>
-        </div>
-        <div class="photo-layout">
-            <div class="photo">
-                <img class="image" src="pics/octogoneMMA.jpeg" alt="octogone de MMA">
+        <div class="passion-container">
+            <div class="intro-section">
+                <h2>Mes Passions</h2>
+                <p>Découvrez ce qui m'anime au quotidien et forge ma personnalité</p>
             </div>
-            <div class="text">
-                <h3>Le MMA</h3>
-                <p>Je pratique le pancrace depuis 2019, une discipline qui combine les techniques de lutte et de boxe, et j'ai également passé un an à me former au jiu-jitsu brésilien (JJB). Mon objectif est de commencer à pratiquer le MMA l'année prochaine. En attendant, je regarde beaucoup de combats, fasciné par la stratégie, la technique et l'intensité de ce sport. Le MMA est pour moi une passion qui exige discipline, persévérance et un fort mental, et je suis impatient de continuer à progresser dans cette voie.</p>
-            </div>
-        </div>
 
-        <div class="photo-layout">
-            <div class="photo">
-                <img class="image" src="pics/montagne04.jpg" alt="Montagne">
+            <div class="passion-card">
+                <div class="passion-image">
+                    <img src="pics/octogoneMMA.jpeg" alt="octogone de MMA">
+                </div>
+                <div class="passion-content">
+                    <h3 class="passion-title">Le MMA</h3>
+                    <p class="passion-text">
+                        Je pratique le pancrace depuis 2019, une discipline qui combine les techniques de lutte et de boxe, et j'ai également passé un an à me former au jiu-jitsu brésilien (JJB). Mon objectif est de commencer à pratiquer le MMA l'année prochaine. En attendant, je regarde beaucoup de combats, fasciné par la stratégie, la technique et l'intensité de ce sport. Le MMA est pour moi une passion qui exige discipline, persévérance et un fort mental, et je suis impatient de continuer à progresser dans cette voie.
+                    </p>
+                </div>
             </div>
-            <div class="text">
-                <h3>La Montagne</h3>
-                <p>Né à 600 mètres d'altitude dans une ville de Provence, j'ai toujours été entouré par les montagnes. J'adore randonner, profitant du calme et des paysages magnifiques qu'offrent les hauteurs. La montagne est un lieu de ressourcement pour moi, un espace où je peux me connecter avec la nature et trouver la paix intérieure. Que ce soit en été ou en hiver, chaque randonnée est une nouvelle aventure, me permettant de découvrir des panoramas époustouflants et de tester mes limites physiques.</p>
-            </div>
-        </div>
 
-        <div class="photo-layout">
-            <div class="photo">
-                <img class="image" src="pics/tronebehanzin.jpg" alt="Trône de Béhanzin">
+            <div class="passion-card">
+                <div class="passion-image">
+                    <img src="pics/montagne04.jpg" alt="Montagne">
+                </div>
+                <div class="passion-content">
+                    <h3 class="passion-title">La Montagne</h3>
+                    <p class="passion-text">
+                        Né à 600 mètres d'altitude dans une ville de Provence, j'ai toujours été entouré par les montagnes. J'adore randonner, profitant du calme et des paysages magnifiques qu'offrent les hauteurs. La montagne est un lieu de ressourcement pour moi, un espace où je peux me connecter avec la nature et trouver la paix intérieure. Que ce soit en été ou en hiver, chaque randonnée est une nouvelle aventure, me permettant de découvrir des panoramas époustouflants et de tester mes limites physiques.
+                    </p>
+                </div>
             </div>
-            <div class="text">
-                <h3>L'Histoire du Bénin</h3>
-                <p>L'histoire de l'Afrique, et plus particulièrement celle du Bénin, mon pays d'origine, me passionne. Le Bénin possède une histoire riche, marquée par le puissant royaume de Dahomey, célèbre pour ses amazones et son influence dans la région. Étudier cette histoire me permet de mieux comprendre nos racines, notre culture et les défis contemporains. Cette passion nourrit mon identité et mon désir de voir le patrimoine africain reconnu et célébré à sa juste valeur.</p>
-            </div>
-        </div>
 
-        <div class="photo-layout">
-            <div class="photo">
-                <img class="image" src="pics/livres.jpg" alt="Livres">
+            <div class="passion-card">
+                <div class="passion-image">
+                    <img src="pics/tronebehanzin.jpg" alt="Trône de Béhanzin">
+                </div>
+                <div class="passion-content">
+                    <h3 class="passion-title">L'Histoire du Bénin</h3>
+                    <p class="passion-text">
+                        L'histoire de l'Afrique, et plus particulièrement celle du Bénin, mon pays d'origine, me passionne. Le Bénin possède une histoire riche, marquée par le puissant royaume de Dahomey, célèbre pour ses amazones et son influence dans la région. Étudier cette histoire me permet de mieux comprendre nos racines, notre culture et les défis contemporains. Cette passion nourrit mon identité et mon désir de voir le patrimoine africain reconnu et célébré à sa juste valeur.
+                    </p>
+                </div>
             </div>
-            <div class="text">
-                <h3>Les livres</h3>
-                <p>La lecture est une de mes passions, et je suis particulièrement attiré par les œuvres de Stephen King, Colson Whitehead, Aimé Césaire et Cheikh Anta Diop. Stephen King, avec ses histoires captivantes et ses personnages profonds, m'entraîne dans des mondes imaginaires fascinants. Colson Whitehead explore les réalités sociales et historiques avec une profondeur touchante. Aimé Césaire, à travers sa poésie et ses essais, exprime la fierté de l'identité noire et dénonce les injustices. Cheikh Anta Diop, historien et anthropologue, offre une perspective révolutionnaire sur l'histoire africaine. Ces auteurs enrichissent mon esprit et alimentent ma passion pour la littérature et la compréhension du monde.</p>
+
+            <div class="passion-card">
+                <div class="passion-image">
+                    <img src="pics/livres.jpg" alt="Livres">
+                </div>
+                <div class="passion-content">
+                    <h3 class="passion-title">Les livres</h3>
+                    <p class="passion-text">
+                        La lecture est une de mes passions, et je suis particulièrement attiré par les œuvres de Stephen King, Colson Whitehead, Aimé Césaire et Cheikh Anta Diop. Stephen King, avec ses histoires captivantes et ses personnages profonds, m'entraîne dans des mondes imaginaires fascinants. Colson Whitehead explore les réalités sociales et historiques avec une profondeur touchante. Aimé Césaire, à travers sa poésie et ses essais, exprime la fierté de l'identité noire et dénonce les injustices. Cheikh Anta Diop, historien et anthropologue, offre une perspective révolutionnaire sur l'histoire africaine. Ces auteurs enrichissent mon esprit et alimentent ma passion pour la littérature et la compréhension du monde.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -210,6 +322,15 @@
                 link.addEventListener('mouseout', function() {
                     this.style.backgroundColor = '';
                     this.style.color = '';
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const cards = document.querySelectorAll('.passion-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 200);
                 });
             });
         </script>
