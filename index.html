@@ -20,6 +20,8 @@
                 padding: 20px;
                 top: 0;
                 z-index: 1000;
+                backdrop-filter: blur(10px);
+                position: sticky;
             }
 
             footer{
@@ -37,7 +39,7 @@
 
             p{
                 text-align: center;
-                color: #fff;
+                color: #051309;
             }
 
             .bienvenue{
@@ -46,14 +48,57 @@
             }
 
             .text_droite{
-                text-align: center;
-                border-radius: 100px;
-                margin-top: 5% ;
-                background-image: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.9) 100%);
-                width: 50%;
-                margin: auto;
-                margin-top: 5%;
-                text-emphasis: bold;
+                text-align: justify;
+                border-radius: 20px;
+                background-image: linear-gradient(135deg, rgba(22,117,242,0.95) 0%, rgba(118, 188, 250, 0.95) 50%, rgba(161,166,23,0.95) 100%);
+                width: 80%;
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 30px;
+                box-sizing: border-box;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                hyphens: auto;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                backdrop-filter: blur(5px);
+                letter-spacing: 0.3px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transform-style: preserve-3d;
+            }
+
+            .text_droite:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            }
+
+            .text_droite h1 {
+                margin-bottom: 20px;
+                font-size: 2em;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            }
+
+            .text_droite p {
+                line-height: 1.8;
+                margin: 0;
+                padding: 15px;
+                font-size: 1.1em;
+            }
+
+            .text_droite p i {
+                display: block;
+                margin-top: 15px;
+                color: rgba(255,255,255,0.9);
+                font-size: 0.95em;
+            }
+
+            @media (max-width: 768px) {
+                .text_droite {
+                    width: 95%;
+                    padding: 20px;
+                }
             }
 
             .logos{
@@ -88,6 +133,23 @@
                 text-decoration: none;
                 text-align: center;
                 padding: 8px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: white;
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
             }
 
             #phintr{
@@ -107,21 +169,146 @@
             }
 
             #profil{
-                height: 500px;
-                width: 500px;
-                clip-path: circle(200px);
-                shape-outside: circle(50%);
+                height: 450px;
+                width: 450px;
+                border-radius: 50%;
                 background-image: url(pics/pic_profile.jpg);
-                margin-top: 4%;
-                margin-left: 1%;
-                background-repeat: no-repeat;
                 background-size: cover;
-                background-position: 0.5ch;
+                background-position: center;
+                border: 12px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 
+                    0 0 30px rgba(22, 117, 242, 0.4),
+                    0 0 60px rgba(22, 117, 242, 0.2);
+                transform-style: preserve-3d;
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+                animation: float 6s ease-in-out infinite;
             }
 
-            #contenaire{
+            #profil:hover {
+                transform: translateY(-10px) rotateY(10deg);
+                box-shadow: 
+                    0 0 40px rgba(22, 117, 242, 0.6),
+                    0 0 80px rgba(22, 117, 242, 0.3);
+            }
+
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
+            }
+
+            @media (max-width: 968px) {
+                .split-layout {
+                    grid-template-columns: 1fr;
+                }
+
+                #profil {
+                    height: 350px;
+                    width: 350px;
+                }
+
+                .profile-side {
+                    position: relative;
+                }
+            }
+
+            .split-layout {
+                display: grid;
+                grid-template-columns: 0.8fr 1.2fr;
+                min-height: calc(100vh - 140px);
+                gap: 4rem;
+                padding: 2rem;
+                align-items: center;
+            }
+
+            .profile-side {
                 display: flex;
-                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                position: sticky;
+                top: 2rem;
+                height: fit-content;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .content-side {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            /* Animations communes */
+            .fade-in {
+                animation: fadeIn 0.8s ease-in;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Navigation moderne */
+            .modern-nav {
+                background: rgba(0, 24, 9, 0.8);
+                backdrop-filter: blur(10px);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .nav-link {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: white;
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+            /* Modern Layout Improvements */
+            .modern-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            .social-links {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                display: flex;
+                gap: 1rem;
+                z-index: 100;
+            }
+
+            .social-links a {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                backdrop-filter: blur(5px);
+                transition: all 0.3s ease;
+            }
+
+            .social-links a:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            /* Smooth Scroll Behavior */
+            html {
+                scroll-behavior: smooth;
             }
         </style>
     </head>
@@ -148,29 +335,39 @@
                 </ul>
             </nav>
         </header>
-        <div id="contenaire">
-            <div>
-                <div id="profil"></div>
+        <div class="modern-container">
+            <div class="split-layout">
+                <aside class="profile-side fade-in">
+                    <div id="profil"></div>
+                    <!-- ...existing profile content... -->
+                </aside>
+                
+                <main class="content-side fade-in">
+                    <div class="text_droite">
+                        <h1>Bienvenue sur la page d'acceuil de mon site web</h1>
+                        <p>
+                            Je suis étudiant en alternance, en deuxième année de BUT Réseaux et Télécommunications à l'Université Nice Côte d'Azur, avec une passion débordante pour la sécurité informatique.
+                            <br><br>
+                            Actuellement, je mets mes compétences en pratique en tant que Technicien Supérieur en Développement Cybersécurité chez Equans.
+                            <br><br>
+                            Je t'invite à explorer mon site web où tu découvriras plus sur moi, mes passions, mon parcours, ainsi que les projets passionnants auxquels je contribue.
+                            <br><br>
+                            <i>Pour me contacter, en bas à droite de la page vous avez mon GitHub et mon LinkedIn.</i>
+                        </p>
+                    </div>
+                </main>
             </div>
-            <div>
-                <div class="bienvenue">
-                    <h1> Bienvenue </h1>
-                    <p id="phintr"> Vous êtes sur l'accueil de mon site web personnel </p>
-                </div>
-                <h1 class="text_droite">Qui suis-je ?</h1>
-                <p class="text_droite">Je suis étudiant en alternance, en deuxième année de BUT Réseaux et Télécommunications à l'Université Nice Côte d'Azur, avec une passion débordante pour la sécurité informatique.
+        </div>
 
-                    Actuellement, je mets mes compétences en pratique en tant que Technicien Supérieur en Développement Cybersécurité chez Equans.<br>  
-                    
-                    Je t’invite à explorer mon site web où tu découvriras plus sur moi, mes passions, mon parcours, ainsi que les projets passionnants auxquels je contribue
-                 <br><i>pour me contacter en bas a droite de la page vous avez mon git hub et mon linked in.</i>  
-                </p>
-            </div>
-        <div class="logos"></div>
-            <a id="linkedin" href="https://fr.linkedin.com/in/bossou-hugo/fr"> <img src="icons/linkedin.png" alt="logo linked in "> </a>
-            <a id="git" href="https://github.com/bboss204"> <img src="icons/code.png" alt="logo GitHub "> </a>
+        <div class="social-links">
+            <a id="linkedin" href="https://fr.linkedin.com/in/bossou-hugo/fr">
+                <img src="icons/linkedin.png" alt="LinkedIn">
+            </a>
+            <a id="git" href="https://github.com/bboss204">
+                <img src="icons/code.png" alt="GitHub">
+            </a>
         </div>
-        </div>
+
         <footer>
             <p>&copy; 2024 BOSSOU Hugo. Tous droits réservés.</p>
         </footer>

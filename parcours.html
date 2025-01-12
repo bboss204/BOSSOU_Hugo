@@ -80,173 +80,120 @@
             border-radius: 0;
         }
 
+        .timeline-wrapper {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
         .timeline {
-        position: relative;
-        width: 660px;
-        margin: 0 auto;
-        margin-top: 20px;
-        padding: 1em 0;
-        list-style-type: none;
-        margin-bottom: 100px; /* Increased bottom margin */
-        padding-bottom: 100px; /* Added padding at bottom of timeline */
+            position: relative;
+            padding: 0;
+            list-style: none;
         }
 
-        .timeline:before {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        content: ' ';
-        display: block;
-        width: 6px;
-        height: 100%;
-        margin-left: -3px;
-        background: rgb(80,80,80);
-        background: -moz-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(100%,rgba(125,185,232,1)));
-        background: -webkit-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-        background: -o-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-        background: -ms-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-        background: linear-gradient(to bottom, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-        
-        z-index: 5;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
         }
 
-        .timeline li {
-        padding: 1em 0;
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
-        .timeline li:after {
-        content: "";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
-        .direction-l {
-        position: relative;
-        width: 300px;
-        float: left;
-        text-align: right;
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
         }
 
-        .direction-r {
-        position: relative;
-        width: 300px;
-        float: right;
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
         }
 
-        .flag-wrapper {
-        position: relative;
-        display: inline-block;
-        
-        text-align: center;
+        .timeline-date {
+            color: #1675F2;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
-        .flag {
-        position: relative;
-        display: inline;
-        background: rgb(248,248,248);
-        padding: 6px 10px;
-        border-radius: 5px;
-        
-        font-weight: 600;
-        text-align: left;
+        .timeline-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
 
-        .direction-l .flag {
-        -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-        -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-        box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+        .timeline-text {
+            color: #666;
+            line-height: 1.6;
         }
 
-        .direction-r .flag {
-        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-        -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-        box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #1675F2;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        .direction-l .flag:before,
-        .direction-r .flag:before {
-        position: absolute;
-        top: 50%;
-        right: -40px;
-        content: ' ';
-        display: block;
-        width: 12px;
-        height: 12px;
-        margin-top: -10px;
-        background: #fff;
-        border-radius: 10px;
-        border: 4px solid yellowgreen;
-        z-index: 10;
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
         }
 
-        .direction-r .flag:before {
-        left: -40px;
-        }
+        @media screen and (max-width: 860px) {
+            .timeline {
+                width: 100%;
+                padding: 1rem;
+            }
 
-        .direction-l .flag:after {
-        content: "";
-        position: absolute;
-        left: 100%;
-        top: 50%;
-        height: 0;
-        width: 0;
-        margin-top: -8px;
-        border: solid transparent;
-        border-left-color: rgb(248,248,248);
-        border-width: 8px;
-        pointer-events: none;
-        }
+            .direction-l, .direction-r {
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
 
-        .direction-r .flag:after {
-        content: "";
-        position: absolute;
-        right: 100%;
-        top: 50%;
-        height: 0;
-        width: 0;
-        margin-top: -8px;
-        border: solid transparent;
-        border-right-color: rgb(248,248,248);
-        border-width: 8px;
-        pointer-events: none;
-        }
+            .flag-wrapper {
+                text-align: center;
+            }
 
-        .time-wrapper {
-        display: inline;
-        
-        line-height: 1em;
-        font-size: 0.66666em;
-        color: yellowgreen;
-        vertical-align: middle;
-        }
-
-        .direction-l .time-wrapper {
-        float: left;
-        }
-
-        .direction-r .time-wrapper {
-        float: right;
-        }
-
-        .time {
-        display: inline-block;
-        padding: 4px 6px;
-        background: rgb(248,248,248);
-        }
-
-        .desc {
-        margin: 1em 0.75em 0 0;
-        
-        font-size: 0.77777em;
-        font-style: italic;
-        line-height: 1.5em;
-        }
-
-        .direction-r .desc {
-        margin: 1em 0 0 0.75em;
+            .desc {
+                margin: 10px auto;
+                max-width: 400px;
+            }
         }
 
         /* ================ Timeline Media Queries ================ */
@@ -364,6 +311,12 @@
             overflow: hidden;
             background-color: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(5px);
+            background: rgba(22,117,242,0.1);
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .introp h2 {
@@ -408,6 +361,246 @@
         body {
             padding-bottom: 150px; /* Even more padding on mobile */
         }
+
+        .show-timeline {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll Animation */
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Improvements */
+        @media screen and (max-width: 768px) {
+            .timeline {
+                padding: 1rem;
+            }
+
+            .introp {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .flag {
+                padding: 10px 15px;
+            }
+
+            .desc {
+                padding: 15px;
+                margin: 10px;
+            }
+        }
+
+        .hero-section {
+            position: relative;
+            padding: 80px 20px;
+            margin-bottom: 60px;
+            background: rgba(22,117,242,0.05);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            position: relative;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1675F2, #85BFF2);
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4em;
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            max-width: 700px;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(22,117,242,0.1) 0%, rgba(133,191,242,0.1) 100%);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            background: linear-gradient(45deg, #1675F2, #85BFF2);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-decoration:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .hero-decoration:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
+        }
+
+        .intro-section {
+            position: relative;
+            min-height: 40vh;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: rgba(22,117,242,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .intro-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .intro-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .intro-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #1675F2, #85BFF2);
+            border-radius: 2px;
+        }
+
+        .intro-description {
+            font-size: 1.2rem;
+            color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .intro-section {
+                padding: 40px 20px;
+            }
+
+            .intro-title {
+                font-size: 2rem;
+            }
+
+            .intro-description {
+                font-size: 1rem;
+            }
+        }
+
+        .intro-background {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(22,117,242,0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: 1;
+        }
+
+        .intro-decoration {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #1675F2, #85BFF2);
+            filter: blur(60px);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .intro-decoration:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .intro-decoration:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -3s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
     </style>
 </head>
 <body>
@@ -433,84 +626,98 @@
             </ul>
         </nav>
     </header>
-    <div class="introp">
-        <h2>Mon Parcours Professionnel</h2>
-        <p>
-            Découvrez mon chemin vers l'expertise en cybersécurité à travers mes formations et expériences
-        </p>
+    <div class="intro-section">
+        <div class="intro-content">
+            <h1 class="intro-title">Mon Parcours Professionnel</h1>
+            <p class="intro-description">
+                Découvrez mon chemin vers l'expertise en cybersécurité à travers mes formations et expériences
+            </p>
+        </div>
     </div>
-    <ul class="timeline">
-
-        <!-- Item 2 -->
-        <li>
-            <div class="direction-l">
-                <div class="flag-wrapper">
-                    <span class="flag">Lycée</span>
-                    <span class="time-wrapper"><span class="time">2019 - 2023</span></span>
+    <div class="timeline-wrapper">
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2019 - 2023</div>
+                    <div class="timeline-title">Lycée</div>
+                    <div class="timeline-text">
+                        J'ai obtenu mon baccalauréat numérique en sciences informatiques, mathématiques, physique et chimie, 
+                        avec l'option euro (anglais), en 2023 au lycée Pierre-Gilles de Gennes à Digne-les-Bains
+                    </div>
                 </div>
-                <div class="desc">J'ai obtenu mon baccalauréat numérique en sciences informatiques, mathématiques, physique et chimie, avec l'option euro (anglais), en 2023 au lycée Pierre-Gilles de Gennes à Digne-les-Bains</div>
-            </div>
-        </li>
+                <div class="timeline-dot"></div>
+            </li>
 
-        <li>
-            <div class="direction-r">
-                <div class="flag-wrapper">
-                    <span class="flag">Stage fin de troisième</span>
-                    <span class="time-wrapper"><span class="time">décembre 2023</span></span>
+            <li class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Décembre 2023</div>
+                    <div class="timeline-title">Stage fin de troisième</div>
+                    <div class="timeline-text">
+                        J'ai effectué mon stage de fin de troisième dans l'entreprise Xsalto, qui est un hébergeur web. 
+                        Ce stage m'a permis de découvrir et d'affirmer mon désir d'entrer dans le monde professionnel de l'informatique
+                    </div>
                 </div>
-                <div class="desc">J'ai effectué mon stage de fin de troisième dans l'entreprise Xsalto, qui est un hébergeur web. Ce stage m'a permis de découvrir et d'affirmer mon désir d'entrer dans le monde professionnel de l'informatique</div>
-            </div>
-        </li>
+                <div class="timeline-dot"></div>
+            </li>
 
-        <li>
-            <div class="direction-l">
-                <div class="flag-wrapper">
-                    <span class="flag">BUT R&T</span>
-                    <span class="time-wrapper"><span class="time">2023 - présent</span></span>
+            <li class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - présent</div>
+                    <div class="timeline-title">BUT R&T</div>
+                    <div class="timeline-text">
+                        Je suis actuellement étudiant à l'IUT Réseau Télécommunication de Nice Côte d'Azur, 
+                        sur Sophia Antipolis. Mon objectif est de devenir un expert en cybersécurité.
+                    </div>
                 </div>
-                <div class="desc">Je suis actuellement étudiant à l'IUT Réseau Télécommunication de Nice Côte d'Azur, sur Sophia Antipolis. Mon objectif est de  devenir un expert en cybersécurité.</div>
-            </div>
-        </li>
+                <div class="timeline-dot"></div>
+            </li>
 
-        <li>
-            <div class="direction-r">
-                <div class="flag-wrapper">
-                    <span class="flag">Alternance </span>
-                    <span class="time-wrapper"><span class="time">Septembre 2024</span></span>
+            <li class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Septembre 2024</div>
+                    <div class="timeline-title">Alternance</div>
+                    <div class="timeline-text">
+                        Dès septembre 2024 j'intègre le monde du travail au poste de technicien développeur 
+                        en cyber sécurité. Découvrez-en plus dans la partie alternance du site.
+                    </div>
                 </div>
-                <div class="desc">Dès septembre 2024 j'integre le monde du travail au poste de technicien developpeur en cyber securité decouvrez en plus dans la partie alternace du site.</div>
-            </div>
-        </li>
-    </ul>
+                <div class="timeline-dot"></div>
+            </li>
+        </ul>
+    </div>
 
     <footer>
         <p>&copy; 2024 BOSSOU Hugo. Tous droits réservés.</p>
     </footer>
 
     <script>
-        var navLinks = document.querySelectorAll('.nav-link');
+        document.addEventListener('DOMContentLoaded', function() {
+            var navLinks = document.querySelectorAll('.nav-link');
 
-        window.addEventListener('scroll', function() {
-            var timeline = document.querySelector('.timeline');
-            var timelinePosition = timeline.getBoundingClientRect().top;
-            var windowHeight = window.innerHeight;
+            navLinks.forEach(function(link) {
+                link.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = 'white';
+                    this.style.color = 'black';
+                    this.style.borderRadius = '10px';
+                });
 
-            if (timelinePosition < windowHeight) {
-                timeline.classList.add('show');
-            }
-        });
-
-        navLinks.forEach(function(link) {
-            link.addEventListener('mouseover', function() {
-                this.style.backgroundColor = 'white';
-                this.style.color = 'black';
-                this.style.borderRadius = '10px';
+                link.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                    this.style.borderRadius = '50%';
+                });
             });
 
-            link.addEventListener('mouseout', function() {
-                this.style.backgroundColor = '';
-                this.style.color = '';
-                this.style.borderRadius = '50%';
+            // Animation simple au défilement
+            window.addEventListener('scroll', function() {
+                var timelineItems = document.querySelectorAll('.direction-l, .direction-r');
+                
+                timelineItems.forEach(function(item) {
+                    var position = item.getBoundingClientRect();
+                    if(position.top < window.innerHeight - 100) {
+                        item.style.opacity = "1";
+                    }
+                });
             });
         });
     </script>
