@@ -1,141 +1,173 @@
 <!DOCTYPE html>
-<html lang="fr"></html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes debuts professionnel</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mes débuts professionnels</title>
+    <link rel="icon" type="image/png" href="icons/mountain.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            background-image: url('pics/backpageAcceuil.jpg');
-            background-size: cover;
-            background-attachment: fixed;
+        :root {
+            --primary-color: 22, 117, 242;
+            --secondary-color: 161, 166, 23;
+            --accent-color: 118, 188, 250;
+            --dark-color: 0, 24, 9;
+            --light-color: 255, 255, 255;
+            --text-color: 240, 240, 240;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 10px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 15px 30px rgba(0,0,0,0.2);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+        }
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(var(--dark-color), 0.9), rgba(var(--dark-color), 0.9)),
+                              url('pics/backpageAcceuil.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: rgba(var(--text-color), 0.9);
             font-family: 'Nunito', sans-serif;
-            color: #fff;
-            text-align: center;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: rgba(0, 24, 9, 0.9); /* Match index.html background color */
-            padding: 20px;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        footer {
-            background-color: rgba(0, 24, 9, 0.9);
+            background-color: rgba(var(--dark-color), 0.9);
+            padding: var(--spacing-md) 0;
             position: fixed;
             width: 100%;
-            bottom: 0;
-            padding: 10px 0;
-            color: #fff;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
         }
 
-        h1 {
-            text-align: center;
-            color: #fff;
-            margin: 0;
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: rgba(var(--light-color));
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: var(--spacing-sm);
+            filter: brightness(0) invert(1);
+            object-fit: contain;
+        }
+
+        .logo-text {
+            margin-left: var(--spacing-sm);
+            font-size: 1.3rem;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-link {
+            color: rgba(var(--light-color), 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--spacing-sm) 0;
+            position: relative;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: rgba(var(--light-color));
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: rgba(var(--accent-color));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .image-fallback {
+            background-color: rgba(var(--accent-color), 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .logo-icon.image-fallback::after {
+            content: "LOGO";
+            font-size: 10px;
+            color: white;
         }
 
         .bienvenue {
-            padding: 100px 20px 20px;
-        }
-
-        .photo-layout {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-
-        .photo {
-            flex: 1;
-            margin-right: 20px;
-        }
-
-        .image {
-            width: 100%;
-            max-width: 300px;
-            border: 2px dotted yellowgreen;
-            border-radius: 10px;
-        }
-
-        .text {
-            flex: 2;
-            background: linear-gradient(45deg, rgba(22,117,242,0.9) 0%, rgba(133,191,242,0.9) 40%, rgba(161,166,23,0.9) 100%);
-            border-radius: 15px;
-            padding: 20px;
-            color: #fff;
-        }
-
-        .nav {
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            justify-content: center;
-        }
-
-        .nav-item {
-            display: inline;
-            padding: 1%;
+            padding: 100px var(--spacing-lg) 20px;
             text-align: center;
-        }
-
-        .nav-item a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            padding: 8px;
-            border-radius: 0; /* Remove border-radius from original style */
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .nav-item a:hover {
-            background-color: white;
-            color: black;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .photo-layout {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .photo {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-
-            .image {
-                max-width: 100%;
-            }
-        }
-
-        .photo-layout:nth-child(even) .photo {
-            order: 2;
-            margin-right: 0;
-            margin-left: 20px;
-        }
-
-        .photo-layout:nth-child(even) .text {
-            order: 1;
         }
 
         main {
             display: flex;
             justify-content: space-between;
-            padding: 20px;
-            gap: 30px;
+            padding: var(--spacing-lg);
+            gap: var(--spacing-xl);
+            margin-top: 80px;
             margin-bottom: 60px;
         }
 
@@ -145,8 +177,8 @@
             position: relative;
             height: 500px;
             overflow: hidden;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius);
+            background: rgba(var(--dark-color), 0.2);
             backdrop-filter: blur(5px);
         }
 
@@ -177,24 +209,42 @@
         .text-section {
             flex: 1;
             max-width: 45%;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.2);
+            padding: var(--spacing-lg);
+            background: rgba(var(--dark-color), 0.2);
             backdrop-filter: blur(5px);
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             text-align: center;
+            color: rgba(var(--light-color), 0.9);
         }
 
         .text-section h2 {
             font-size: 2em;
-            margin-bottom: 20px;
-            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+            color: rgba(var(--light-color));
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Poppins', sans-serif;
         }
 
         .text-section p {
             line-height: 1.6;
-            color: #ffffff;
             text-align: justify;
+        }
+
+        footer {
+            background-color: rgba(var(--dark-color), 0.9);
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: rgba(var(--light-color));
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
@@ -202,37 +252,45 @@
                 flex-direction: column;
             }
 
-            .photo-gallery,
-            .text-section {
+            .photo-gallery, .text-section {
                 max-width: 100%;
+            }
+
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-sm);
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Mes debuts professionnel</h1>
-        <nav role="navigation">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a id="nav-link_1" href="index.html"> Accueil </a>
-                </li>
-                <li class="nav-item">
-                    <a id="nav-link_2" href="parcours.html"> Parcours </a>
-                </li>
-                <li class="nav-item">
-                    <a id="nav-link_3" href="portfolio.html"> Portfolio </a>
-                </li>
-                <li class="nav-item">
-                    <a id="nav-link_4" href="alternance.html"> Alternance </a>
-                </li>
-                <li class="nav-item">
-                    <a id="nav-link_5" href="passions.html"> Passions </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <img src="icons/mountain.png" class="logo-icon" onerror="this.classList.add('image-fallback')">
+                </a>
+                <span class="logo-text">Hugo Bossou</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="parcours.html" class="nav-link">Parcours</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="alternance.html" class="nav-link">Alternance</a></li>
+                    <li><a href="passions.html" class="nav-link">Passions</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <br>
+
     <main>
         <div class="photo-gallery">
             <div class="gallery-container">
@@ -249,14 +307,11 @@
         </div>
 
         <div class="text-section">
-            <h2>Fièrement collaborateur equans depuis septembre 2024</h2>
-            <p>Depuis décembre 2024, j'ai eu l'opportunité de commencer à mettre en pratique mes compétences dans le cadre professionnel. J'occupe actuellement le poste de Technicien Développeur en Cybersécurité au sein d'une filiale du groupe Equans. Ce métier m'apporte un enrichissement de mon bagage technique, mais aussi l'opportunité de mettre en œuvre toutes les connaissances informatiques que j'ai accumulées jusqu'à présent.
-
-            Je travaille actuellement sur l'élaboration d'un système d'automatisation des scans de vulnérabilité des produits Equans, afin de permettre à l'entreprise d'assurer la sécurité des produits qu'elle commercialise.
-            
-            Mes tâches principales consistent à proposer des solutions efficaces de scan de vulnérabilité de nos produits, ainsi qu'à concevoir, grâce à la programmation, des outils internes à l'entreprise pour améliorer la sécurité.
-            
-            Ce poste me permet d'enrichir constamment mon bagage technique, de découvrir les enjeux concrets de la cybersécurité, et me confirme que ce domaine est passionnant. Je continue d'apprendre et je suis déterminé à évoluer dans ce secteur.</p>
+            <h2>Fièrement collaborateur Equans depuis septembre 2024</h2>
+            <p>Depuis septembre 2024, j'ai eu l'opportunité de commencer à mettre en pratique mes compétences dans le cadre professionnel. J'occupe actuellement le poste de Technicien Développeur en Cybersécurité au sein d'une filiale du groupe Equans. Ce métier m'apporte un enrichissement de mon bagage technique, mais aussi l'opportunité de mettre en œuvre toutes les connaissances informatiques que j'ai accumulées jusqu'à présent.</p>
+            <p>Je travaille actuellement sur l'élaboration d'un système d'automatisation des scans de vulnérabilité des produits Equans, afin de permettre à l'entreprise d'assurer la sécurité des produits qu'elle commercialise.</p>
+            <p>Mes tâches principales consistent à proposer des solutions efficaces de scan de vulnérabilité de nos produits, ainsi qu'à concevoir, grâce à la programmation, des outils internes à l'entreprise pour améliorer la sécurité.</p>
+            <p>Ce poste me permet d'enrichir constamment mon bagage technique, de découvrir les enjeux concrets de la cybersécurité, et me confirme que ce domaine est passionnant. Je continue d'apprendre et je suis déterminé à évoluer dans ce secteur.</p>
         </div>
     </main>
 
@@ -265,21 +320,54 @@
     </footer>
 
     <script>
-        var navLinks = document.querySelectorAll('.nav-item a');
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
 
-        navLinks.forEach(function(link) {
-            link.addEventListener('mouseover', function() {
-                this.style.backgroundColor = 'white';
-                this.style.color = 'black';
-                this.style.borderRadius = '10px';
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Animation pour le header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Effet hover sur les liens de navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.color = 'rgba(var(--light-color))';
+                this.style.transform = 'translateY(-2px)';
             });
 
-            link.addEventListener('mouseout', function() {
-                this.style.backgroundColor = '';
+            link.addEventListener('mouseleave', function() {
                 this.style.color = '';
-                this.style.borderRadius = '50%';
+                this.style.transform = '';
             });
         });
+
+        // Gestion du diaporama
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
