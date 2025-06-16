@@ -37,7 +37,7 @@
 
         body {
             background-image: linear-gradient(rgba(var(--dark-color), 0.9), rgba(var(--dark-color), 0.9)),
-                              url(pics/backpageAcceuil.jpg);
+            url(pics/backpageAcceuil.jpg);
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
@@ -46,6 +46,7 @@
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
+            padding-top: 80px;
         }
 
         header {
@@ -58,6 +59,9 @@
             backdrop-filter: blur(12px);
             box-shadow: var(--shadow-md);
             transition: var(--transition);
+            height: 80px;
+            display: flex;
+            align-items: center;
         }
 
         .header-container {
@@ -67,6 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
         .logo-container {
@@ -78,7 +83,6 @@
         .logo {
             font-size: 1.3rem;
             font-weight: 600;
-            color: rgba(var(--light-color));
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -159,22 +163,26 @@
         }
 
         .intro-section {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
-            padding: 0 var(--spacing-lg);
-            margin-top: 80px;
+            padding: var(--spacing-lg) var(--spacing-lg);
+            margin-top: 0;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
         }
 
         .intro-content {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            width: 100%;
         }
 
         .intro-title {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-md);
+            font-size: 2.8rem;
+            margin-bottom: var(--spacing-lg);
             background: linear-gradient(90deg, rgba(var(--primary-color),1) 0%, rgba(var(--accent-color),1) 100%);
             -webkit-background-clip: text;
             background-clip: text;
@@ -183,19 +191,20 @@
 
         .intro-description {
             font-size: 1.2rem;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             opacity: 0.9;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            padding: var(--spacing-lg);
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-xl);
+            padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-xl);
             max-width: 1200px;
             margin: 0 auto;
+            margin-bottom: var(--spacing-xl);
         }
 
         .card {
@@ -203,9 +212,9 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             cursor: pointer;
-            height: 350px;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -213,46 +222,63 @@
             text-align: center;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(var(--light-color), 0.2);
+            position: relative;
+            perspective: 1000px;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
         .card-content {
-            padding: var(--spacing-md);
+            padding: var(--spacing-lg);
             color: rgba(var(--light-color), 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-content {
+            transform: translateZ(20px);
         }
 
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: var(--spacing-md);
             font-family: 'Poppins', sans-serif;
+            font-weight: 600;
         }
 
         .card-description {
-            margin-bottom: var(--spacing-md);
-            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.1rem;
+            max-width: 80%;
+            line-height: 1.6;
         }
 
         .btn {
             display: inline-block;
-            padding: var(--spacing-sm) var(--spacing-lg);
+            padding: var(--spacing-sm) var(--spacing-xl);
             background-color: rgba(var(--primary-color), 1);
             color: rgba(var(--light-color));
             text-decoration: none;
             border-radius: var(--border-radius);
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             font-weight: 600;
             margin-top: auto;
             border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             background-color: rgba(var(--primary-color), 0.9);
         }
 
@@ -265,7 +291,7 @@
             background: rgba(var(--dark-color), 0.97);
             z-index: 2000;
             overflow-y: auto;
-            padding: var(--spacing-xl);
+            padding: var(--spacing-xl) var(--spacing-lg);
             transform: translateY(100%);
             opacity: 0;
             transition: var(--transition);
@@ -290,6 +316,15 @@
             color: rgba(var(--light-color));
             font-family: 'Poppins', sans-serif;
         }
+
+        .small-icon {
+        width: 24px; 
+        height: auto;
+        display: inline-block;
+        margin: 0 5px; 
+        
+        }
+
 
         .close-btn {
             background: rgba(var(--light-color), 0.1);
@@ -382,6 +417,152 @@
             line-height: 1.8;
         }
 
+        /* Logo GitHub */
+        .github-highlight {
+            text-align: center;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .github-widget {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: rgba(var(--light-color), 0.9);
+            transition: var(--transition);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            background: rgba(var(--accent-color), 0.1);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid rgba(var(--light-color), 0.1);
+            width: 100%;
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .github-widget:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            background: rgba(var(--accent-color), 0.2);
+        }
+
+        .github-icon-container {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .github-logo-svg {
+            transition: var(--transition);
+            width: 60px;
+            height: 60px;
+        }
+
+        .github-widget:hover .github-logo-svg {
+            transform: scale(1.1);
+        }
+
+        .github-text {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        /* Grille de projets */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .project-card {
+            background: rgba(var(--light-color), 0.05);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(var(--light-color), 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            background: rgba(var(--light-color), 0.1);
+        }
+
+        .project-image-container {
+            height: 180px;
+            overflow: hidden;
+            border-radius: calc(var(--border-radius) - 2px);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(var(--light-color), 0.03);
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .project-card h4 {
+            margin-bottom: var(--spacing-sm);
+            color: rgba(var(--light-color), 0.9);
+            font-size: 1.1rem;
+        }
+
+        .project-card p {
+            margin-bottom: var(--spacing-md);
+            color: rgba(var(--text-color), 0.8);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            justify-content: center;
+        }
+
+        .project-skills .skill-tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+        }
+
+        /* Adaptation pour mobile */
+        @media (max-width: 768px) {
+            .github-widget {
+                flex-direction: row;
+                justify-content: center;
+                max-width: 100%;
+            }
+
+            .github-icon-container {
+                margin-right: var(--spacing-sm);
+                margin-bottom: 0;
+            }
+
+            .github-logo-svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .github-widget {
+                padding: var(--spacing-sm);
+                flex-direction: row;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -454,17 +635,41 @@
             background-color: rgba(var(--dark-color), 0.9);
             padding: var(--spacing-md) 0;
             text-align: center;
-            position: fixed;
-            bottom: 0;
+            position: relative;
             width: 100%;
             color: rgba(var(--light-color));
             backdrop-filter: blur(10px);
-            z-index: 1000;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
         }
 
         footer p {
             margin: 0;
             font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
         }
 
         @keyframes fadeIn {
@@ -480,39 +685,60 @@
 
         @media (max-width: 1024px) {
             .portfolio-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .card {
+                height: 380px;
+            }
+
+            .intro-section {
+                min-height: 75vh;
             }
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            header {
+                height: 60px;
+                padding: var(--spacing-sm) 0;
+            }
+
             .portfolio-grid {
                 grid-template-columns: 1fr;
                 padding: var(--spacing-md);
             }
 
             .card {
-                height: 300px;
+                height: 350px;
+                margin-bottom: var(--spacing-lg);
             }
 
-            .fullscreen-view {
-                padding: var(--spacing-md);
-            }
-
-            .fullscreen-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: var(--spacing-md);
-            }
-
-            .close-btn {
-                position: fixed;
-                top: var(--spacing-md);
-                right: var(--spacing-md);
-                z-index: 3000;
-            }
-
-            .fullscreen-title {
+            .card-title {
                 font-size: 1.5rem;
+            }
+
+            .card-description {
+                font-size: 1rem;
+                max-width: 90%;
+                margin-bottom: var(--spacing-lg);
+            }
+
+            .intro-section {
+                min-height: 70vh;
+                padding: var(--spacing-md) var(--spacing-lg);
+            }
+
+            .intro-title {
+                font-size: 2rem;
+            }
+
+            .intro-description {
+                font-size: 1rem;
+                max-width: 90%;
             }
         }
     </style>
@@ -585,7 +811,6 @@
             </div>
         </div>
 
-        <!-- Vues détaillées -->
         <!-- Vue Informatique -->
         <div class="fullscreen-view" id="informatique-view">
             <div class="fullscreen-header">
@@ -598,6 +823,7 @@
             <div class="internal-nav">
                 <button class="nav-tab active" onclick="switchTab('cyber', this)">Cybersécurité</button>
                 <button class="nav-tab" onclick="switchTab('dev', this)">Développement Web</button>
+                <button class="nav-tab" onclick="switchTab('android', this)">Développement Android</button>
                 <button class="nav-tab" onclick="switchTab('autres-projets', this)">Autres Projets</button>
             </div>
 
@@ -608,9 +834,17 @@
                         <h3 class="project-title">Cybersécurité</h3>
                         <p class="project-description">
                             Depuis la seconde, je m'intéresse fortement à la sécurité informatique.
-                            J'ai commencé à apprendre et à participer à des CTF (Capture The Flag).
-                            Ces challenges me permettent de mettre en pratique mes connaissances en sécurité informatique
-                            et de développer mes compétences en résolution de problèmes.
+                            Je suis un pratiquant régulier de CTF (Capture The Flag) et j'ai récemment terminé premier dans un CTF avec la gendarmerie nationale.
+                            Je participe à des CTF notamment avec la gendarmerie nationale.<img src="pics/hearthbleed_classement.jpg" class="project-image" alt="CTF Gendarmerie">
+                            Vous pouvez consulter mon profil LinkedIn <a href="[lien LinkedIn]" target="_blank" rel="noopener noreferrer">ici</a>.<br>
+                            Je pratique également les CTF sur des plateformes comme :
+                            <a href="https://ctf.hackthebox.com/user/profile/541262" target="_blank" rel="noopener noreferrer">
+                                <img src="icons/hackthebox.png" class="small-icon" alt="Hack The Box">
+                            </a>
+                            <a href="[lien TryHackMe]" target="_blank" rel="noopener noreferrer">
+                                <img src="icons/tryhackme.png" class="small-icon" alt="TryHackMe">
+                            </a>  <br>                     
+                            <img src="https://tryhackme-badges.s3.amazonaws.com/xmiu.png" alt="Your Image Badge" />
                         </p>
                         <div class="skills-list">
                             <span class="skill-tag">CTF</span>
@@ -623,26 +857,88 @@
                     </div>
                 </div>
 
-                <!-- Section Développement Web -->
-                <div class="section-content" id="dev-section">
+                <!-- Section Développement Android -->
+                <div class="section-content" id="android-section">
                     <div class="project-item">
-                        <h3 class="project-title">Développement Web</h3>
+                        <h3 class="project-title">Développement Android</h3>
                         <p class="project-description">
-                            Pendant mes années de collège, j'ai découvert HTML et CSS,
-                            ce qui m'a permis de créer de petits sites web que je publie aujourd'hui.
-                            Tout le site sur lequel vous naviguez est codé en HTML, CSS et JavaScript,
-                            avec des techniques que j'ai apprises et perfectionnées au fil du temps.
+                            J'ai développé une application Android en utilisant Java.
+                            En groupe, nous avons créé une application qui permet de consulter les CVE (Common Vulnerabilities and Exposures).
+                            Vous pouvez consulter le projet sur notre github AndroidCVE <a href="[lien GitHub]" target="_blank" rel="noopener noreferrer">ici</a>.
+                        </p>
+                        <img src="pics/android_cve.png" alt="Application Android CVE" class="project-image">
+                        <p>Au sein de ce projet de groupe, j'ai principalement travaillé sur Java. J'ai permis d'aller télécharger via Java les données CVE du MITRE et de les transformer en un format exploitable pour l'application.
+                            pour cela mon code java récupère les données JSON des CVE depuis le site du MITRE, les parse et les stocke dans une base de données mongodb.
                         </p>
                         <div class="skills-list">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">JAVA</span>
+                            <span class="skill-tag">Android development</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">JSON</span>
+                            <span class="skill-tag">API</span>
                             <span class="skill-tag">Git</span>
-                            <span class="skill-tag">UI/UX Design</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Section Développement Web -->
+                <div class="section-content" id="dev-section">
+    <div class="project-item">
+        <h3 class="project-title">Développement Web</h3>
+        <p class="project-description">
+            Je développe principalement en HTML, CSS et JavaScript.
+            Vous pouvez consulter mes projets sur mon profil GitHub :
+        </p>
+
+        <!-- Logo GitHub -->
+        <div class="github-highlight">
+            <a href="https://github.com/bboss204" target="_blank" rel="noopener noreferrer" class="github-widget">
+                <div class="github-icon-container">
+                    <img src="icons/code.png" alt="GitHub" class="github-logo-image">
+                </div>
+                <span class="github-text">Voir mes projets sur GitHub</span>
+            </a>
+        </div>
+
+        <!-- Mes deux projets web -->
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="pics/siteportfolio.png" alt="Mon premier site web" class="project-image">
+                </div>
+                <h4>Site Web Personnel</h4>
+                <p>Mon portfolio professionnel que vous êtes en train de consulter, développé avec HTML, CSS et JavaScript.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="pics/basket.png" alt="Site sur le basketball" class="project-image">
+                </div>
+                <h4>Site sur le basketball</h4>
+                <p>Un site sur le basketball, mon premier site HTML/CSS vraiment simple, mais la nostalgie oblige à le garder.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS </span>
+                </div>
+                </div>
+                </div>
+
+                <div class="skills-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Bootstrap</span>
+                </div>
+            </div>
+            </div>
+
 
                 <!-- Section Autres Projets -->
                 <div class="section-content" id="autres-projets-section">
@@ -650,6 +946,19 @@
                         <h3 class="project-title">Autres Projets Informatiques</h3>
                         <p class="project-description">
                             En dehors des projets principaux, j'ai travaillé sur plusieurs autres initiatives.
+                        </p>
+                        <p>
+                            par exemple un generateur automatique de sbom en powershell.
+                        </p>
+                        <img src="pics/powershell.webp" alt="powershell logo" class="project-image">
+                        <p>
+                            Ce projet permet de générer automatiquement un SBOM (Software Bill of Materials) pour les applications Windows.
+                            Il utilise PowerShell pour automatiser la collecte des informations sur les composants logiciels.
+                        Les sbom sont des documents qui contiennent la liste des composants logiciels d'une application, ainsi que leurs versions et licences.   
+                            ils sont essentielle en sécurité pour identifier les vulnérabilités et assurer la conformité des logiciels.
+                        </p>
+                        <p>
+                            Si le projet vous intéresse, vous pouvez le télécharger : <a href="./powershell-sbom.ps1"><img src="icons/download.png" alt="Télécharger" class="small-icon"></a>.
                         </p>
                         <div class="skills-list">
                             <span class="skill-tag">Python</span>
@@ -674,8 +983,8 @@
 
             <div class="internal-nav">
                 <button class="nav-tab active" onclick="switchTab('reseau-formation', this)">Formation</button>
-                <button class="nav-tab" onclick="switchTab('reseau-projets', this)">Projets</button>
-                <button class="nav-tab" onclick="switchTab('reseau-competences', this)">Compétences</button>
+                <button class="nav-tab" onclick="switchTab('reseau-projets', this)">Projets réseau</button>
+                <button class="nav-tab" onclick="switchTab('reseau-competences', this)">Projet Réseau Sécurisé</button>
             </div>
 
             <div class="fullscreen-content">
@@ -704,6 +1013,14 @@
                             Voici un projet que j'ai réalisé en binôme sur la création d'un réseau d'entreprise complet
                             utilisant Cisco Packet Tracer.
                         </p>
+                        <img src="pics/reseaupic.png" alt="Projet Réseau" class="project-image">
+                        <p>
+                            Ce projet comprend la configuration de routeurs, switchs, VLANs, DHCP et DNS.
+                            Il a été réalisé dans le cadre de ma formation en BUT Réseaux & Télécommunications.
+                        </p>
+                        <p>
+                            Si le projet vous intéresse, vous pouvez le télécharger : <a href="./reseaux.pkt"><img src="icons/download.png" alt="Télécharger" class="small-icon"></a>.
+                        </p>
                         <div class="skills-list">
                             <span class="skill-tag">TCP/IP</span>
                             <span class="skill-tag">VLANs</span>
@@ -713,10 +1030,23 @@
                     </div>
                 </div>
 
-                <!-- Section Compétences -->
+                <!-- Section réseau sécurisé -->
                 <div class="section-content" id="reseau-competences-section">
                     <div class="project-item">
-                        <h3 class="project-title">Compétences Techniques</h3>
+                        <h3 class="project-title">Projet Réseau Sécurisé</h3>
+                        <p>
+                            J'ai également réalisé un projet de réseau sécurisé en utilisant des routeurs Cisco.
+                            Ce projet a été réalisé dans le cadre de ma formation en BUT Réseaux & Télécommunications.
+                        </p>
+                        <img src="pics/GNS3.png" alt="Projet Réseau Sécurisé" class="project-image">
+                        <p>
+                            Ce projet comprend la configuration de routeurs pour sécuriser le réseau d'entreprise,
+                            en utilisant des protocoles de sécurité avancés.
+                            Le tout sur GNS3.
+                        </p>
+                        <p>ce projet concretise mon expertise en matière de sécurité des réseaux.</p>
+                        <p>
+                            Si le projet vous intéresse, vous pouvez le télécharger : <a href="./reseau-securise.pkt"><img src="icons/download.png" alt="Télécharger" class="small-icon"></a>.
                         <div class="skills-list">
                             <span class="skill-tag">Cisco Packet Tracer</span>
                             <span class="skill-tag">Wireshark</span>
@@ -757,6 +1087,7 @@
                             <span class="skill-tag">Anglais technique</span>
                             <span class="skill-tag">Compréhension écrite</span>
                             <span class="skill-tag">Expression orale</span>
+                            <span class="skill-tag">Expression écrite</span>
                         </div>
                     </div>
                 </div>
@@ -812,6 +1143,7 @@
     <script>
         function openFullscreen(viewId) {
             document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = '17px';
             const view = document.getElementById(`${viewId}-view`);
             view.classList.add('active');
 
@@ -831,6 +1163,7 @@
 
         function closeFullscreen() {
             document.body.style.overflow = 'auto';
+            document.body.style.paddingRight = '';
             const views = document.querySelectorAll('.fullscreen-view');
             views.forEach(view => {
                 view.classList.remove('active');
@@ -838,16 +1171,25 @@
         }
 
         function switchTab(tabId, element) {
-            const parent = element.closest('.fullscreen-view');
-            const tabs = parent.querySelectorAll('.nav-tab');
-            const contents = parent.querySelectorAll('.section-content');
+            // Masquer toutes les sections
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
 
-            tabs.forEach(tab => tab.classList.remove('active'));
-            contents.forEach(content => content.classList.remove('active'));
+            // Désactiver tous les boutons
+            const buttons = document.querySelectorAll('.nav-tab');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
 
+            // Afficher la section sélectionnée
+            document.getElementById(tabId + '-section').classList.add('active');
+
+            // Activer le bouton sélectionné
             element.classList.add('active');
-            document.getElementById(`${tabId}-section`).classList.add('active');
         }
+
 
         document.querySelectorAll('.back-to-grid').forEach(btn => {
             btn.addEventListener('click', function(e) {
@@ -864,18 +1206,135 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            const introTitle = document.querySelector('.intro-title');
+            const introDesc = document.querySelector('.intro-description');
+
+            if (introTitle) {
+                introTitle.style.opacity = '0';
+                introTitle.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    introTitle.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    introTitle.style.opacity = '1';
+                    introTitle.style.transform = 'translateY(0)';
+                }, 100);
+            }
+
+            if (introDesc) {
+                introDesc.style.opacity = '0';
+                introDesc.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    introDesc.style.transition = 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s';
+                    introDesc.style.opacity = '1';
+                    introDesc.style.transform = 'translateY(0)';
+                }, 100);
+            }
+
             const cards = document.querySelectorAll('.card');
             let delay = 0;
 
             cards.forEach(card => {
                 card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+                card.style.transform = 'translateY(30px)';
                 setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.transition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1)';
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
                 }, delay);
-                delay += 100;
+                delay += 150;
+            });
+
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.pageYOffset;
+                const introSection = document.querySelector('.intro-section');
+                if (introSection) {
+                    introSection.style.transform = `translateY(${scrollPosition * 0.15}px)`;
+                }
+            });
+
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const xAxis = (centerX - x) / 20;
+                    const yAxis = (y - centerY) / 20;
+
+                    this.querySelector('.card-content').style.transform = `translateZ(20px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.querySelector('.card-content').style.transform = 'translateZ(0) rotateY(0) rotateX(0)';
+                });
+            });
+
+            const navToggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('nav ul');
+
+            if (window.innerWidth <= 768) {
+                navToggle.style.display = 'block';
+                nav.style.position = 'absolute';
+                nav.style.top = '100%';
+                nav.style.right = '0';
+                nav.style.backgroundColor = 'rgba(var(--dark-color), 0.9)';
+                nav.style.padding = 'var(--spacing-md)';
+                nav.style.borderRadius = 'var(--border-radius)';
+                nav.style.boxShadow = 'var(--shadow-md)';
+                nav.style.transform = 'translateY(-20px)';
+                nav.style.opacity = '0';
+                nav.style.transition = 'var(--transition)';
+                nav.style.pointerEvents = 'none';
+                nav.style.flexDirection = 'column';
+                nav.style.gap = 'var(--spacing-sm)';
+            }
+
+            navToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                if (nav.classList.contains('active')) {
+                    nav.style.transform = 'translateY(0)';
+                    nav.style.opacity = '1';
+                    nav.style.pointerEvents = 'auto';
+                } else {
+                    nav.style.transform = 'translateY(-20px)';
+                    nav.style.opacity = '0';
+                    nav.style.pointerEvents = 'none';
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        nav.classList.remove('active');
+                        nav.style.transform = 'translateY(-20px)';
+                        nav.style.opacity = '0';
+                        nav.style.pointerEvents = 'none';
+                    }
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 768) {
+                    navToggle.style.display = 'block';
+                } else {
+                    navToggle.style.display = 'none';
+                    nav.style.position = '';
+                    nav.style.top = '';
+                    nav.style.right = '';
+                    nav.style.backgroundColor = '';
+                    nav.style.padding = '';
+                    nav.style.borderRadius = '';
+                    nav.style.boxShadow = '';
+                    nav.style.transform = '';
+                    nav.style.opacity = '';
+                    nav.style.transition = '';
+                    nav.style.pointerEvents = '';
+                    nav.style.flexDirection = '';
+                    nav.style.gap = '';
+                    nav.classList.remove('active');
+                }
             });
         });
     </script>
